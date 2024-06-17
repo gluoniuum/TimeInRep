@@ -8,7 +8,7 @@ import time
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("/home/quakr/CompurutureScientology/Projectttttss/timeIn/mainwind.ui", self)  # Підключення візуалу з дизайнера
+        uic.loadUi("/home/quakr/CompurutureScientology/Projectttttss/TimeInRep/mainwind.ui", self)  # Підключення візуалу з дизайнера
 ########################################################################################*
         
         
@@ -19,7 +19,7 @@ class MainWindow(QMainWindow):
         # self.scrollArea.setWidget(self.widget)        
 
 #
-        print('test2')
+        
 #* Табла тіпа sql але поки просто образний пітон
 
         self.pbutt2 = 130
@@ -108,7 +108,7 @@ class MainWindow(QMainWindow):
 #? Додавання часу       
     def open_addTimeWidget(self):
         self.new_window = QDialog()
-        uic.loadUi("/home/quakr/CompurutureScientology/Projectttttss/timeIn/naoborot.ui", self.new_window)
+        uic.loadUi("/home/quakr/CompurutureScientology/Projectttttss/TimeInRep/naoborot.ui", self.new_window)
         
         self.new_window.cancel_button.clicked.connect(self.buttonsss)
         self.new_window.save_button.clicked.connect(self.buttonsss)
@@ -134,7 +134,7 @@ class MainWindow(QMainWindow):
 #? кнопка ігор додавання
     def open_addGameWidget(self):
         self.new_window = QDialog()
-        uic.loadUi("/home/quakr/CompurutureScientology/Projectttttss/timeIn/timedialog.ui", self.new_window)
+        uic.loadUi("/home/quakr/CompurutureScientology/Projectttttss/TimeInRep/timedialog.ui", self.new_window)
         
         self.new_window.cancel_button.clicked.connect(self.add_game)
         self.new_window.save_button.clicked.connect(self.add_game)
