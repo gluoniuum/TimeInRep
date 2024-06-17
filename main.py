@@ -26,7 +26,7 @@ class MainWindow(QMainWindow):
         self.pbutt3 = 12
         self.pbutt4 = 560
         
-        bubububuub = jsfkfjfj
+        
 #* ховаємо кнопки(геній) 
         
         self.buttons = [
