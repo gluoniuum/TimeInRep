@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>more_horiz_24dp_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>restaurant_24dp_FILL0_wght400_GRAD0_opsz24.svg</file>
+    <file>stadia_controller_24dp_FILL0_wght400_GRAD0_opsz24.svg</file>
+  </qresource>
+</RCC>
