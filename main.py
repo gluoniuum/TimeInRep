@@ -114,6 +114,7 @@ class MainWindow(QMainWindow):
         self.new_window.save_button.clicked.connect(self.buttonsss)
         
         self.new_window.show()
+        self.new_window.show
 
     def buttonsss(self):
         whois = self.sender()
