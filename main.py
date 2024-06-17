@@ -19,7 +19,7 @@ class MainWindow(QMainWindow):
         # self.scrollArea.setWidget(self.widget)        
 
 #
-
+        print('time')
 #* Табла тіпа sql але поки просто образний пітон
 
         self.pbutt2 = 130
