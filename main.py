@@ -14,6 +14,7 @@ class MainWindow(QMainWindow):
         
 #* Хня якась
         self.setFixedSize(640, 632)
+        self.move(700, 80)
         self.widget = QWidget()
         self.scrollLayout = QVBoxLayout(self.widget)
         # self.scrollArea.setWidget(self.widget)        
@@ -39,10 +40,7 @@ class MainWindow(QMainWindow):
             button.hide()
 
         self.labels = [
-            self.label_2, self.label_3, self.label_4,
-            self.label_5, self.label_6, self.label_7,
-            self.label_8, self.label_9, self.label_10,
-            self.label_11, self.label_12, self.label_13
+            self.label_3, self.label_4, self.label_5, self.label_6,
         ]
         for label in self.labels:
             label.hide()
@@ -64,10 +62,9 @@ class MainWindow(QMainWindow):
 #* коннекти
         self.pushButton.clicked.connect(self.open_addGameWidget)
         self.pushButton.clicked.connect(self.counter)
-        
+        self.start_butt.clicked.connect(self.start_timer)
         self.time_butt_2.clicked.connect(self.open_addTimeWidget)
-        self.timer.timeout.connect(self.update_timer)
-        self.start_butt.clicked.connect(self.update_timer)
+        self.timer.timeout.connect(self.update_timer_forStart)
         self.pushButton_3.clicked.connect(self.chose_activity)
         self.pushButton_2.clicked.connect(self.chose_activity)
         self.pushButton_4.clicked.connect(self.chose_activity)
@@ -86,35 +83,33 @@ class MainWindow(QMainWindow):
     def start_timer(self):
         self.timer.start(1000)  
         
-    def update_timer(self):
+    def update_timer_forStart(self):
         if self.start_butt.isChecked():
             if self.choose == 'pushButton_2':
-                 
                 self.butt1_time += 1
+                self.timer_sync(self.butt1_time, )
+                self.label_3.show()
+            
+            if self.choose == 'pushButton_3':
+                self.butt2_time += 1
+                self.timer_sync(self.butt2_time, )
+                self.label_4.show()
 
-                minutes = self.elapsed_time // 60 % 60
-                seconds = self.elapsed_time % 60
-                hours = self.elapsed_time // 3600
-                time_str = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-                print(time_str)
-                self.start_butt.setText('Start')
+            if self.choose == 'pushButton_4':
+                self.butt3_time += 1
+                self.timer_sync(self.butt2_time, )
+                self.label_5.show()
             else:
                 print('upps')
-        #    
-        #     self.label_2.show()
-        #     self.elapsed_time += 1
-
-        #     minutes = self.elapsed_time // 60 % 60
-        #     seconds = self.elapsed_time % 60
-        #     hours = self.elapsed_time // 3600
-
-    def timer_sync(self):    
-        time_str = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
         
-        self.label_2.setText(time_str)
+    def timer_sync(self, button_time):    
+        hours = button_time // 3600
+        minutes = (button_time % 3600) // 60
+        seconds = button_time % 60
+        button_time = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+        print(button_time)
         
-            
-#
+    ### короче треба зробити тему щоб був статус увімкнено і ввимкнутто, і тоді якщо одне то час обчислюєтчся, друге то ні
         
 
 #? Додавання часу       
