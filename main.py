@@ -22,15 +22,15 @@ class MainWindow(QMainWindow):
         
 #* Табла тіпа sql але поки просто образний пітон
 
-        self.pbutt2 = 130
-        self.pbutt3 = 12
-        self.pbutt4 = 560
+        self.butt1_time = 0
+        self.butt2_time = 1
+        self.butt3_time = 0
         
         
 #* ховаємо кнопки(геній) 
         
         self.buttons = [
-            self.pushButton_2, self.pushButton_3, self.pushButton_4,
+            self.pushButton_3, self.pushButton_4,
             self.pushButton_5, self.pushButton_6, self.pushButton_7,
             self.pushButton_8, self.pushButton_9, self.pushButton_10,
             self.pushButton_11, self.pushButton_12, self.pushButton_13
@@ -64,12 +64,13 @@ class MainWindow(QMainWindow):
 #* коннекти
         self.pushButton.clicked.connect(self.open_addGameWidget)
         self.pushButton.clicked.connect(self.counter)
-        self.start_butt.clicked.connect(self.start_timer)
+        
         self.time_butt_2.clicked.connect(self.open_addTimeWidget)
         self.timer.timeout.connect(self.update_timer)
-        self.pushButton_3.clicked.connect(self.habit_time)
-        self.pushButton_2.clicked.connect(self.habit_time)
-        self.pushButton_4.clicked.connect(self.habit_time)
+        self.start_butt.clicked.connect(self.update_timer)
+        self.pushButton_3.clicked.connect(self.chose_activity)
+        self.pushButton_2.clicked.connect(self.chose_activity)
+        self.pushButton_4.clicked.connect(self.chose_activity)
 #
         
     
@@ -87,20 +88,31 @@ class MainWindow(QMainWindow):
         
     def update_timer(self):
         if self.start_butt.isChecked():
-            self.start_butt.setText('Start')
-           ##
-            self.label_2.show()
-            self.elapsed_time += 1
+            if self.choose == 'pushButton_2':
+                 
+                self.butt1_time += 1
 
-            minutes = self.elapsed_time // 60 % 60
-            seconds = self.elapsed_time % 60
-            hours = self.elapsed_time // 3600
-            
-            time_str = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            
-            self.label_2.setText(time_str)
-        else: 
-            self.start_butt.setText('Stop')
+                minutes = self.elapsed_time // 60 % 60
+                seconds = self.elapsed_time % 60
+                hours = self.elapsed_time // 3600
+                time_str = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
+                print(time_str)
+                self.start_butt.setText('Start')
+            else:
+                print('upps')
+        #    
+        #     self.label_2.show()
+        #     self.elapsed_time += 1
+
+        #     minutes = self.elapsed_time // 60 % 60
+        #     seconds = self.elapsed_time % 60
+        #     hours = self.elapsed_time // 3600
+
+    def timer_sync(self):    
+        time_str = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
+        
+        self.label_2.setText(time_str)
+        
             
 #
         
@@ -114,8 +126,7 @@ class MainWindow(QMainWindow):
         self.new_window.save_button.clicked.connect(self.buttonsss)
         
         self.new_window.show()
-        self.new_window.show
-
+        
     def buttonsss(self):
         whois = self.sender()
         print(whois.text())
@@ -205,36 +216,40 @@ class MainWindow(QMainWindow):
         self.new_window.hide()
 
 #? ну собсно вибирання звички
-
-    def habit_time(self):
-        whois = self.sender()
-        print(f"Switching to: {whois.objectName()}")
+    def chose_activity(self):
+        self.chosedActivity = self.sender()
+        print(f"Chosed activity: {self.chosedActivity.objectName()}")
+        self.choose = self.chosedActivity.objectName()
+        print(self.choose)
+    # def habit_time(self):
+    #     whois = self.sender()
+    #     print(f"Switching to: {whois.objectName()}")
 
         # Save current elapsed time before switching
-        if self.current_button:
-            if self.current_button == self.pushButton_2:
-                self.time_button_2 = self.elapsed_time
-            elif self.current_button == self.pushButton_3:
-                self.time_button_3 = self.elapsed_time
-            elif self.current_button == self.pushButton_4:
-                self.time_button_4 = self.elapsed_time
+        # if self.current_button:
+        #     if self.current_button == self.pushButton_2:
+        #         self.time_button_2 = self.elapsed_time
+        #     elif self.current_button == self.pushButton_3:
+        #         self.time_button_3 = self.elapsed_time
+        #     elif self.current_button == self.pushButton_4:
+        #         self.time_button_4 = self.elapsed_time
 
         # Switch to the new button
-        self.current_button = whois
-        self.timer.stop()
-        if whois == self.pushButton_2:
+        # self.current_button = whois
+        
+        # if whois == self.pushButton_2:
             
-            self.elapsed_time = self.time_button_2
+        #     self.elapsed_time = self.time_button_2
             
-        elif whois == self.pushButton_3:
+        # elif whois == self.pushButton_3:
             
-            self.elapsed_time = self.time_button_3
+        #     self.elapsed_time = self.time_button_3
             
-        elif whois == self.pushButton_4:
+        # elif whois == self.pushButton_4:
             
-            self.elapsed_time = self.time_button_4
+        #     self.elapsed_time = self.time_button_4
 
-        self.timer.stop()
+        # self.timer.stop()
 
 #########################################################################################*
 if __name__ == "__main__":
