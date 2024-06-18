@@ -47,7 +47,7 @@ class MainWindow(QMainWindow):
 #
         
 #* глобалки типа
-        self.button_count = 0
+        self.button_count = 1
         self.buttons = {}    
         self.timer = QTimer(self)
         self.elapsed_time = 0
@@ -94,17 +94,31 @@ class MainWindow(QMainWindow):
         if self.start_butt.isChecked():
             if self.choose == 'pushButton_2':
                 self.time_button_2['status'] = not self.time_button_2['status']
-                print(self.time_button_2)
-                self.label_3.show()
-    
-    
+                print(self.time_button_2['status'])
+                
+                self.update_timer_forStart()
 
             if self.choose == 'pushButton_3':
                 self.time_button_3['status'] = not self.time_button_3['status']
-                print(self.time_button_3)
-                self.label_6.show()
+                print(self.time_button_3['status'])
                 
-        
+                self.update_timer_forStart()
+
+    def update_timer_forStart(self):
+        if self.time_button_2['status'] == True:
+            print('timer 1 was started')
+            self.label_3.show()
+        if self.time_button_2['status'] == False:
+            print('timer 1 was stoped')
+            self.label_3.hide()
+
+        if self.time_button_3['status'] == True:
+            print('timer 2 was started')
+            self.label_6.show()
+        if self.time_button_3['status'] == False:
+            print('timer 2 was stoped')
+            self.label_6.hide()
+
     def timer_sync(self, button_time):    
         pass
         
