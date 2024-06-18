@@ -71,7 +71,7 @@ class MainWindow(QMainWindow):
         self.start_butt.clicked.connect(self.start_timer)
         self.start_butt.clicked.connect(self.value_changer)
         self.time_butt_2.clicked.connect(self.open_addTimeWidget)
-        # self.timer.timeout.connect(self.update_timer_forStart)
+        self.timer.timeout.connect(self.update_timer_forStart)
         self.pushButton_3.clicked.connect(self.chose_activity)
         self.pushButton_2.clicked.connect(self.chose_activity)
         self.pushButton_4.clicked.connect(self.chose_activity)
@@ -105,18 +105,41 @@ class MainWindow(QMainWindow):
                 self.update_timer_forStart()
 
     def update_timer_forStart(self):
-        if self.time_button_2['status'] == True:
-            print('timer 1 was started')
+        if self.time_button_2['status']:
+            
             self.label_3.show()
-        if self.time_button_2['status'] == False:
-            print('timer 1 was stoped')
+            
+            self.time_button_2['seconds'] += 1  # Оновлюємо кількість секунд на 1
+
+            hours = self.time_button_2['seconds'] // 3600
+            minutes = (self.time_button_2['seconds'] % 3600) // 60
+            seconds = self.time_button_2['seconds'] % 60
+            formatted_time = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+            print(formatted_time)
+        else:
+            
             self.label_3.hide()
 
+            
+
         if self.time_button_3['status'] == True:
-            print('timer 2 was started')
-            self.label_6.show()
+            if self.time_button_3['status']:
+            
+                self.label_6.show()
+                
+                self.time_button_3['seconds'] += 1  # Оновлюємо кількість секунд на 1
+
+                hours = self.time_button_3['seconds'] // 3600
+                minutes = (self.time_button_3['seconds'] % 3600) // 60
+                seconds = self.time_button_3['seconds'] % 60
+                formatted_time = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+                print(formatted_time)
+        else:
+            
+            self.label_3.hide()
+
         if self.time_button_3['status'] == False:
-            print('timer 2 was stoped')
+            
             self.label_6.hide()
 
     def timer_sync(self, button_time):    
