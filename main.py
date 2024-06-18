@@ -53,18 +53,25 @@ class MainWindow(QMainWindow):
         self.elapsed_time = 0
         self.start_butt.setCheckable(True)
         self.current_button = None
-        self.elapsed_time = 0
-        self.time_button_2 = 0
-        self.time_button_3 = 0
-        self.time_button_4 = 0
-#
+        
+
+        self.time_button_2 = {
+            'status' : False,
+            'seconds': 0,
+        }
+        self.time_button_3 = {
+            'status' : False,
+            'seconds': 0,
+        }
+#       
 
 #* коннекти
         self.pushButton.clicked.connect(self.open_addGameWidget)
         self.pushButton.clicked.connect(self.counter)
         self.start_butt.clicked.connect(self.start_timer)
+        self.start_butt.clicked.connect(self.value_changer)
         self.time_butt_2.clicked.connect(self.open_addTimeWidget)
-        self.timer.timeout.connect(self.update_timer_forStart)
+        # self.timer.timeout.connect(self.update_timer_forStart)
         self.pushButton_3.clicked.connect(self.chose_activity)
         self.pushButton_2.clicked.connect(self.chose_activity)
         self.pushButton_4.clicked.connect(self.chose_activity)
@@ -83,31 +90,29 @@ class MainWindow(QMainWindow):
     def start_timer(self):
         self.timer.start(1000)  
         
-    def update_timer_forStart(self):
+    def value_changer(self):
         if self.start_butt.isChecked():
             if self.choose == 'pushButton_2':
-                self.butt1_time += 1
-                self.timer_sync(self.butt1_time, )
+                self.time_button_2['status'] = not self.time_button_2['status']
+                print(self.time_button_2)
                 self.label_3.show()
-            
-            if self.choose == 'pushButton_3':
-                self.butt2_time += 1
-                self.timer_sync(self.butt2_time, )
-                self.label_4.show()
+    
+    
 
-            if self.choose == 'pushButton_4':
-                self.butt3_time += 1
-                self.timer_sync(self.butt2_time, )
-                self.label_5.show()
-            else:
-                print('upps')
+            if self.choose == 'pushButton_3':
+                self.time_button_3['status'] = not self.time_button_3['status']
+                print(self.time_button_3)
+                self.label_6.show()
+                
         
     def timer_sync(self, button_time):    
-        hours = button_time // 3600
-        minutes = (button_time % 3600) // 60
-        seconds = button_time % 60
-        button_time = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
-        print(button_time)
+        pass
+        
+        # hours = button_time // 3600
+        # minutes = (button_time % 3600) // 60
+        # seconds = button_time % 60
+        # button_time = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+        # print(button_time)
         
     ### короче треба зробити тему щоб був статус увімкнено і ввимкнутто, і тоді якщо одне то час обчислюєтчся, друге то ні
         
@@ -216,6 +221,8 @@ class MainWindow(QMainWindow):
         print(f"Chosed activity: {self.chosedActivity.objectName()}")
         self.choose = self.chosedActivity.objectName()
         print(self.choose)
+    
+    
     # def habit_time(self):
     #     whois = self.sender()
     #     print(f"Switching to: {whois.objectName()}")
