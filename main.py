@@ -354,8 +354,24 @@ class MainWindow(QMainWindow):
         print(f"Chosed activity: {self.chosedActivity.objectName()}")
         self.choose = self.chosedActivity.objectName()
         print(self.choose)
-    def chose_indicator(self)
-        pass
+        choice = self.chosedActivity 
+        self.choose_indicator(choice)
+    
+    def choose_indicator(self,choice):
+        if hasattr(self, 'previous_choice') and self.previous_choice:
+            self.previous_choice.setStyleSheet('''background-color: #232634; 
+            color: #a5adce;
+            font-family: Liberation Mono;
+            background-color: #232634;
+            border-radius: 5%; ''')  # Reset previous button style
+        
+        choice.setStyleSheet('''background-color: #232634; 
+            color: #a5adce;
+            font-family: Liberation Mono;
+            background-color: #181926;
+            border-radius: 5%; ''')  
+        self.previous_choice = choice  # Store the current choice as previous
+        
         
     
 
