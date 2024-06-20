@@ -494,9 +494,9 @@ border-radius: 5%;</string>
     <widget class="QLabel" name="timeLabel_3">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>130</x>
        <y>73</y>
-       <width>21</width>
+       <width>51</width>
        <height>21</height>
       </rect>
      </property>

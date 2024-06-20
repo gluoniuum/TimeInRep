@@ -83,6 +83,8 @@ class MainWindow(QMainWindow):
         self.start_butt.clicked.connect(self.value_changer)
         self.time_butt_2.clicked.connect(self.open_addTimeWidget)
         self.timer.timeout.connect(self.update_timer_forStart)
+        
+        # self.start_butt.clicked.connect(self.update_timer)
         self.habit.clicked.connect(self.chose_activity)
         
         self.habit_2.clicked.connect(self.chose_activity)
@@ -157,14 +159,14 @@ class MainWindow(QMainWindow):
 
             elif self.time_button_2['seconds'] < 3600:
                 decimal_hours = (self.time_button_2['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.f}h"
+                small_formatted_time = f"{decimal_hours:.1f}h"
 
             hours = self.time_button_2['seconds'] // 3600
             minutes = (self.time_button_2['seconds'] % 3600) // 60
             seconds = self.time_button_2['seconds'] % 60
             
             self.formatted_time_1 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            
+            self.timer_sync()
              
             self.timeLabel_2.setText(small_formatted_time)
            
@@ -176,20 +178,32 @@ class MainWindow(QMainWindow):
         if self.time_button_3['status'] == True:
             
             self.statusOn_2.show()
-            
             self.time_button_3['seconds'] += 1  # Оновлюємо кількість секунд на 1
+            if self.time_button_3['seconds'] < 60:
+               decimal_minutes = (self.time_button_3['seconds']) / 60
+               small_formatted_time = f"{decimal_minutes:.1f}m"
+             
+            elif self.time_button_3['seconds'] < 360:
+                minutes = (self.time_button_3['seconds']) // 60
+                
+                small_formatted_time = f"{minutes:2d}m"
+
+            elif self.time_button_3['seconds'] < 3600:
+                decimal_hours = (self.time_button_3['seconds']) / 3600
+                small_formatted_time = f"{decimal_hours:.1f}h"
 
             hours = self.time_button_3['seconds'] // 3600
             minutes = (self.time_button_3['seconds'] % 3600) // 60
             seconds = self.time_button_3['seconds'] % 60
-            formatted_time = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
-            small_formatted_time = f" {hours:02d}:{minutes:02d}"
             
-            self.timeLabel_2.setText(small_formatted_time)
-            print(formatted_time)
-            
+            self.formatted_time_2 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
+            self.timer_sync()
+             
+            self.timeLabel_3.setText(small_formatted_time)
+           
         if self.time_button_3['status'] == False:
-            self.statusOn_2.hide() 
+            self.statusOn_2.hide()
+            
 #
 ###? хуйня 3
 
@@ -231,17 +245,15 @@ class MainWindow(QMainWindow):
             self.statusOn_4.show()
         if self.time_button_5['status'] == False:
             self.statusOn_4.hide() 
-        self.timer_sync()
-#       
-                
-
-    def timer_sync(self):    
-        if self.choose == 'habit_2':
-            self.timeLabel.setText(self.formatted_time_1)
         
+# *  центральний таймер      
+   
+    
+    
+   
         
-        
-    ### короче треба зробити тему щоб був статус увімкнено і ввимкнутто, і тоді якщо одне то час обчислюєтчся, друге то ні
+    
+#
         
 
 #? Додавання часу       
@@ -356,7 +368,7 @@ class MainWindow(QMainWindow):
         print(self.choose)
         choice = self.chosedActivity 
         self.choose_indicator(choice)
-    
+        
     def choose_indicator(self,choice):
         if hasattr(self, 'previous_choice') and self.previous_choice:
             self.previous_choice.setStyleSheet('''background-color: #232634; 
@@ -373,8 +385,22 @@ class MainWindow(QMainWindow):
         self.previous_choice = choice  # Store the current choice as previous
         
         
-    
-
+    def timer_sync(self):
+        if self.choose == 'habit_2':
+            hours = self.time_button_2['seconds'] // 3600
+            minutes = (self.time_button_2['seconds'] % 3600) // 60
+            seconds = self.time_button_2['seconds'] % 60
+            
+            self.formatted_time_1 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
+            self.timeLabel.setText(self.formatted_time_1)
+            
+        if self.choose == 'habit_3':
+            hours = self.time_button_3['seconds'] // 3600
+            minutes = (self.time_button_3['seconds'] % 3600) // 60
+            seconds = self.time_button_3['seconds'] % 60
+            
+            self.formatted_time_2 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
+            self.timeLabel.setText(self.formatted_time_2)
 
 #########################################################################################*
 if __name__ == "__main__":
