@@ -140,7 +140,7 @@ font-size: 40px</string>
        <number>16</number>
       </property>
       <property name="sizeConstraint">
-       <enum>QLayout::SetMinimumSize</enum>
+       <enum>QLayout::SetMinAndMaxSize</enum>
       </property>
       <item>
        <widget class="QPushButton" name="habit">

@@ -126,25 +126,33 @@ class MainWindow(QMainWindow):
         return super().eventFilter(obj, event)
 
     def context_menu(self, button):
-        self.whozis = button.objectName()
-        print(self.whozis)
+        
+        self.whozis = button
+        print(self.whozis.objectName)
         self.edit_window = QDialog()
         uic.loadUi('/home/quakr/CompurutureScientology/Projectttttss/TimeInRep/ActivityEdit.ui', self.edit_window)        
         
 
-        if self.whozis == 'habit_2' :
+        if self.whozis.objectName() == 'habit_2' :
             self.edit_window.buttSave.clicked.connect(self.edit_game)
+            self.edit_window.deleteButt.clicked.connect(self.delete_game)
+            self.edit_window.buttCancel.clicked.connect(self.butt_cancel)
+        else: 
+            pass
             
-        else:
-            print('not yyay')
         self.edit_window.show()
+    def butt_cancel(self):
+        self.edit_window.hide()
+    def delete_game(self, button):
+        self.whozis.hide()
+        self.button_count -= 1
+        print(f'мінус: {self.button_count}')
+        self.edit_window.hide()
     def edit_game(self):
-        print(f"button is {self.whozis}")
-
-  
-
-
-
+        new_name = self.edit_window.lineEdit.text()
+        self.whozis.setText(new_name)
+        self.edit_window.hide()
+        
 #?    Кнопарики сайдбари, сотворення і тд                                                                                                                                                             #?
     def counter(self):
         self.button_count += 1

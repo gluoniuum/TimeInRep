@@ -19,19 +19,6 @@ font-family: Liberation Mono;
 background-color: #232634;
 border-radius: 5%;</string>
   </property>
-  <widget class="QTextEdit" name="line">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>130</y>
-     <width>251</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:#494d64</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -153,6 +140,19 @@ color: #292c3c</string>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>140</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:#494d64</string>
+   </property>
   </widget>
  </widget>
  <resources/>
