@@ -133,12 +133,11 @@ class MainWindow(QMainWindow):
         uic.loadUi('/home/quakr/CompurutureScientology/Projectttttss/TimeInRep/ActivityEdit.ui', self.edit_window)        
         
 
-        if self.whozis.objectName() == 'habit_2' :
-            self.edit_window.buttSave.clicked.connect(self.edit_game)
-            self.edit_window.deleteButt.clicked.connect(self.delete_game)
-            self.edit_window.buttCancel.clicked.connect(self.butt_cancel)
-        else: 
-            pass
+        
+        self.edit_window.buttSave.clicked.connect(self.edit_game)
+        self.edit_window.deleteButt.clicked.connect(self.delete_game)
+        self.edit_window.buttCancel.clicked.connect(self.butt_cancel)
+   
             
         self.edit_window.show()
     def butt_cancel(self):
