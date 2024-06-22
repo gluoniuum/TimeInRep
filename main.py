@@ -3,12 +3,16 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout,
 from PyQt5 import uic
 from PyQt5.QtCore import QTimer
 import time
+from PyQt5.QtWidgets import QMenu, QAction
+from PyQt5.QtCore import Qt
+
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("/home/quakr/CompurutureScientology/Projectttttss/TimeInRep/mainwind.ui", self)  # Підключення візуалу з дизайнера
+        
 ########################################################################################*
         
         
@@ -22,7 +26,7 @@ class MainWindow(QMainWindow):
 #
         
 #* Табла тіпа sql але поки просто образний пітон
-
+        
         
         
         
@@ -83,8 +87,8 @@ class MainWindow(QMainWindow):
         self.start_butt.clicked.connect(self.value_changer)
         self.time_butt_2.clicked.connect(self.open_addTimeWidget)
         self.timer.timeout.connect(self.update_timer_forStart)
+        # self.pushButton.clicked.connect(self.contextMenuEvent)
         
-        # self.start_butt.clicked.connect(self.update_timer)
         self.habit.clicked.connect(self.chose_activity)
         
         self.habit_2.clicked.connect(self.chose_activity)
@@ -100,8 +104,33 @@ class MainWindow(QMainWindow):
         self.habit_12.clicked.connect(self.chose_activity)
 
 #
+##? Контекстне меню
+    def contextMenuEvent(self, event):
+        contextMenu = QMenu(self)
         
-    
+        newAct = QAction('Edit', self)
+        openAct = QAction('Delete', self)
+        # quitAct = QAction('Quit', self)
+
+        contextMenu.addAction(newAct)
+        contextMenu.addSeparator()
+        contextMenu.addAction(openAct)
+        # contextMenu.addSeparator()
+        # contextMenu.addAction(quitAct)
+
+        # Встановлюємо стиль для меню (це змінить колір тексту всіх пунктів меню)
+        contextMenu.setStyleSheet("""QMenu { 
+        font-size: 15px;
+        color: #a5adce;
+        font-family: Liberation Mono;
+        background-color: #363a4f;
+        border-radius: 10%; }""")
+
+        action = contextMenu.exec_(self.mapToGlobal(event.pos()))
+
+        
+
+
 #?    Кнопарики сайдбари, сотворення і тд                                                                                                                                                             #?
     def counter(self):
         self.button_count += 1
@@ -141,7 +170,7 @@ class MainWindow(QMainWindow):
 
 
     def update_timer_forStart(self):
-        
+        pass
 ###? хуйня 1         
         if self.time_button_2['status'] == True:
             
@@ -281,7 +310,11 @@ class MainWindow(QMainWindow):
             print('щзх')    
 
 #
-
+    def activityEdit():
+        self.new_window = QDialog()
+        uic.loadUi("/home/quakr/CompurutureScientology/Projectttttss/TimeInRep/ActivityEdit", self.new_window)
+        
+        self.new_window.show()
 #? кнопка ігор додавання
     def open_addGameWidget(self):
         self.new_window = QDialog()

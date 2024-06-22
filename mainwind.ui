@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>630</width>
+    <width>674</width>
     <height>622</height>
    </rect>
   </property>
@@ -28,7 +28,7 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>611</width>
+      <width>651</width>
       <height>591</height>
      </rect>
     </property>
@@ -59,7 +59,7 @@
     <widget class="QFrame" name="frame_2">
      <property name="geometry">
       <rect>
-       <x>230</x>
+       <x>290</x>
        <y>170</y>
        <width>281</width>
        <height>191</height>
@@ -110,26 +110,13 @@ font-size: 40px</string>
       </widget>
      </widget>
     </widget>
-    <widget class="Line" name="line">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>570</y>
-       <width>201</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
     <widget class="Line" name="line_2">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>20</y>
-       <width>16</width>
-       <height>591</height>
+       <x>210</x>
+       <y>8</y>
+       <width>10</width>
+       <height>580</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -144,7 +131,7 @@ font-size: 40px</string>
       <rect>
        <x>0</x>
        <y>20</y>
-       <width>181</width>
+       <width>211</width>
        <height>31</height>
       </rect>
      </property>
@@ -473,7 +460,7 @@ background-color: rgba(255, 255, 255, 0);</string>
     <widget class="QLabel" name="timeLabel_2">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>153</x>
        <y>27</y>
        <width>51</width>
        <height>21</height>
@@ -494,72 +481,9 @@ border-radius: 5%;</string>
     <widget class="QLabel" name="timeLabel_3">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>73</y>
+       <x>154</x>
+       <y>75</y>
        <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-font-size: 15px;
-color: #a5adce;
-font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_4">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>120</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-font-size: 15px;
-color: #a5adce;
-font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_5">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>168</y>
-       <width>20</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-font-size: 15px;
-color: #a5adce;
-font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_6">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>216</y>
-       <width>20</width>
        <height>21</height>
       </rect>
      </property>
@@ -578,7 +502,7 @@ border-radius: 5%;</string>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>300</x>
        <y>310</y>
        <width>261</width>
        <height>91</height>
@@ -647,24 +571,100 @@ color: #c6d0f5;</string>
       </item>
      </layout>
     </widget>
+    <widget class="QLabel" name="timeLabel_4">
+     <property name="geometry">
+      <rect>
+       <x>155</x>
+       <y>127</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font-size: 15px;
+color: #a5adce;
+font-family: Liberation Mono;
+background-color: rgba(255, 255, 255, 0);
+border-radius: 5%;</string>
+     </property>
+     <property name="text">
+      <string>00</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="timeLabel_5">
+     <property name="geometry">
+      <rect>
+       <x>155</x>
+       <y>176</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font-size: 15px;
+color: #a5adce;
+font-family: Liberation Mono;
+background-color: rgba(255, 255, 255, 0);
+border-radius: 5%;</string>
+     </property>
+     <property name="text">
+      <string>00</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_3">
+     <property name="geometry">
+      <rect>
+       <x>-2</x>
+       <y>578</y>
+       <width>220</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="timeLabel_6">
+     <property name="geometry">
+      <rect>
+       <x>156</x>
+       <y>218</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font-size: 15px;
+color: #a5adce;
+font-family: Liberation Mono;
+background-color: rgba(255, 255, 255, 0);
+border-radius: 5%;</string>
+     </property>
+     <property name="text">
+      <string>00</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>590</y>
-      <width>181</width>
-      <height>27</height>
+      <y>586</y>
+      <width>211</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1e1e2e;
 border-radius: 5%;</string>
     </property>
     <property name="text">
-     <string>Add game</string>
+     <string>new activity</string>
     </property>
    </widget>
   </widget>
