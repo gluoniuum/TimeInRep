@@ -5,7 +5,7 @@ from PyQt5.QtCore import QTimer
 import time
 from PyQt5.QtWidgets import QMenu, QAction
 from PyQt5.QtCore import Qt
-
+from PyQt5.QtCore import Qt, QEvent
 
 
 class MainWindow(QMainWindow):
@@ -102,33 +102,47 @@ class MainWindow(QMainWindow):
         self.habit_10.clicked.connect(self.chose_activity)
         self.habit_11.clicked.connect(self.chose_activity)
         self.habit_12.clicked.connect(self.chose_activity)
-
+        
 #
 ##? Контекстне меню
-    def contextMenuEvent(self, event):
-        contextMenu = QMenu(self)
+        self.habit_2.installEventFilter(self)
+        self.habit_3.installEventFilter(self)
+        self.habit_4.installEventFilter(self)
+
+    def eventFilter(self, obj, event):
+        if event.type() == QEvent.MouseButtonPress:
+            if event.button() == Qt.RightButton and obj == self.habit_2:
+                self.context_menu(obj)
+                return True
+            if event.button() == Qt.RightButton and obj == self.habit_3:
+                self.context_menu(obj)
+                return True
+            if event.button() == Qt.RightButton and obj == self.habit_4:
+                self.context_menu(obj)
+                return True
+ 
+ 
+
+        return super().eventFilter(obj, event)
+
+    def context_menu(self, button):
+        self.whozis = button.objectName()
+        print(self.whozis)
+        self.edit_window = QDialog()
+        uic.loadUi('/home/quakr/CompurutureScientology/Projectttttss/TimeInRep/ActivityEdit.ui', self.edit_window)        
         
-        newAct = QAction('Edit', self)
-        openAct = QAction('Delete', self)
-        # quitAct = QAction('Quit', self)
 
-        contextMenu.addAction(newAct)
-        contextMenu.addSeparator()
-        contextMenu.addAction(openAct)
-        # contextMenu.addSeparator()
-        # contextMenu.addAction(quitAct)
+        if self.whozis == 'habit_2' :
+            self.edit_window.buttSave.clicked.connect(self.edit_game)
+            
+        else:
+            print('not yyay')
+        self.edit_window.show()
+    def edit_game(self):
+        print(f"button is {self.whozis}")
 
-        # Встановлюємо стиль для меню (це змінить колір тексту всіх пунктів меню)
-        contextMenu.setStyleSheet("""QMenu { 
-        font-size: 15px;
-        color: #a5adce;
-        font-family: Liberation Mono;
-        background-color: #363a4f;
-        border-radius: 10%; }""")
+  
 
-        action = contextMenu.exec_(self.mapToGlobal(event.pos()))
-
-        
 
 
 #?    Кнопарики сайдбари, сотворення і тд                                                                                                                                                             #?
