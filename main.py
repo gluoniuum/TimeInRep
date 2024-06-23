@@ -131,9 +131,6 @@ class MainWindow(QMainWindow):
         print(self.whozis.objectName)
         self.edit_window = QDialog()
         uic.loadUi('/home/quakr/CompurutureScientology/Projectttttss/TimeInRep/ActivityEdit.ui', self.edit_window)        
-        
-
-        
         self.edit_window.buttSave.clicked.connect(self.edit_game)
         self.edit_window.deleteButt.clicked.connect(self.delete_game)
         self.edit_window.buttCancel.clicked.connect(self.butt_cancel)
@@ -144,6 +141,7 @@ class MainWindow(QMainWindow):
         self.edit_window.hide()
     def delete_game(self, button):
         self.whozis.hide()
+        self.
         self.button_count -= 1
         print(f'мінус: {self.button_count}')
         self.edit_window.hide()
