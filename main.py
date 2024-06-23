@@ -141,15 +141,27 @@ class MainWindow(QMainWindow):
         self.edit_window.hide()
     def delete_game(self, button):
         self.whozis.hide()
-        self.
+        
         self.button_count -= 1
         print(f'мінус: {self.button_count}')
         self.edit_window.hide()
+        print(f' flfllf {self.whozis.objectName()}')
+        if self.whozis.objectName() == "habit_2":
+            self.timeLabel_2.hide()
+        if self.whozis.objectName() == "habit_3":
+            self.timeLabel_3.hide()
+        if self.whozis.objectName() == "habit_4":
+            self.timeLabel_4.hide()
     def edit_game(self):
-        new_name = self.edit_window.lineEdit.text()
-        self.whozis.setText(new_name)
-        self.edit_window.hide()
-        
+        if self.edit_window.comboBox.currentText() == 'Edit':
+            new_name = self.edit_window.lineEdit.text()
+            self.whozis.setText(new_name)
+            self.edit_window.hide()
+        if self.edit_window.comboBox.currentText() == 'Set Time':
+            self.time_button_2['seconds'] = int(self.edit_window.lineEdit.text())
+            self.new_window.hide()
+            self.timer_sync()
+
 #?    Кнопарики сайдбари, сотворення і тд                                                                                                                                                             #?
     def counter(self):
         self.button_count += 1
@@ -318,9 +330,12 @@ class MainWindow(QMainWindow):
         whois = self.sender()
         print(whois.text())
         if whois.text() == 'Save':
-            
-            self.elapsed_time = self.elapsed_time + int(self.new_window.lineEdit.text())
+            print(self.choose)    
+            if self.choose == 'habit_2':
+                print('son')
+                self.time_button_2['seconds']  = self.time_button_2['seconds'] + int(self.new_window.lineEdit.text())
             self.new_window.hide()
+            self.timer_sync()
 
 
         elif whois.text() == 'Cancel':
@@ -420,6 +435,7 @@ class MainWindow(QMainWindow):
         print(self.choose)
         choice = self.chosedActivity 
         self.choose_indicator(choice)
+        self.timer_sync()
         
     def choose_indicator(self,choice):
         if hasattr(self, 'previous_choice') and self.previous_choice:
