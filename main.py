@@ -59,7 +59,7 @@ class MainWindow(QMainWindow):
         self.start_butt.setCheckable(True)
         self.current_button = None
         
-
+## test git
         self.time_button_2 = {
             'status' : False,
             'seconds': 0,
