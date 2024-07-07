@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>674</width>
-    <height>584</height>
+    <width>1038</width>
+    <height>892</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -129,360 +129,6 @@ font-size: 40px</string>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>10</y>
-       <width>211</width>
-       <height>520</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,5,0,0,0,0,0,0,0">
-      <property name="spacing">
-       <number>16</number>
-      </property>
-      <property name="sizeConstraint">
-       <enum>QLayout::SetMinAndMaxSize</enum>
-      </property>
-      <item>
-       <widget class="QPushButton" name="habit">
-        <property name="minimumSize">
-         <size>
-          <width>161</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
-border-radius: 5%;</string>
-        </property>
-        <property name="text">
-         <string>Habit</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="habit_2">
-        <property name="minimumSize">
-         <size>
-          <width>161</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
-border-radius: 5%;</string>
-        </property>
-        <property name="text">
-         <string>Habit</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="habit_3">
-        <property name="minimumSize">
-         <size>
-          <width>161</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
-border-radius: 5%;</string>
-        </property>
-        <property name="text">
-         <string>Habit</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="habit_4">
-        <property name="minimumSize">
-         <size>
-          <width>161</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
-border-radius: 5%;</string>
-        </property>
-        <property name="text">
-         <string>Habit</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="habit_5">
-        <property name="minimumSize">
-         <size>
-          <width>161</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
-border-radius: 5%;</string>
-        </property>
-        <property name="text">
-         <string>Habit</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="habit_6">
-        <property name="minimumSize">
-         <size>
-          <width>161</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
-border-radius: 5%;</string>
-        </property>
-        <property name="text">
-         <string>Habit</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="habit_7">
-        <property name="minimumSize">
-         <size>
-          <width>161</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
-border-radius: 5%;</string>
-        </property>
-        <property name="text">
-         <string>Habit</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="habit_8">
-        <property name="minimumSize">
-         <size>
-          <width>161</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
-border-radius: 5%;</string>
-        </property>
-        <property name="text">
-         <string>Habit_4</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="habit_9">
-        <property name="minimumSize">
-         <size>
-          <width>161</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
-border-radius: 5%;</string>
-        </property>
-        <property name="text">
-         <string>Habit</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="habit_10">
-        <property name="minimumSize">
-         <size>
-          <width>161</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
-border-radius: 5%;</string>
-        </property>
-        <property name="text">
-         <string>Habit</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="habit_11">
-        <property name="minimumSize">
-         <size>
-          <width>161</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
-border-radius: 5%;</string>
-        </property>
-        <property name="text">
-         <string>Habit</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QLabel" name="statusOn_1">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>10</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #ea999c;
-background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>⏸️</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="statusOn_3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>112</y>
-       <width>10</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #ea999c;
-background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>⏸️</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="statusOn_4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>164</y>
-       <width>10</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #ea999c;
-background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>⏸️</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="statusOn_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>70</y>
-       <width>10</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #ea999c;
-background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>⏸️</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="statusOn_5">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>210</y>
-       <width>10</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #ea999c;
-background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>⏸️</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_2">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>19</y>
-       <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-font-size: 15px;
-color: #a5adce;
-font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_3">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>68</y>
-       <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-font-size: 15px;
-color: #a5adce;
-font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
        <x>300</x>
        <y>310</y>
        <width>261</width>
@@ -552,48 +198,6 @@ color: #c6d0f5;</string>
       </item>
      </layout>
     </widget>
-    <widget class="QLabel" name="timeLabel_4">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>115</y>
-       <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-font-size: 15px;
-color: #a5adce;
-font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_5">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>160</y>
-       <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-font-size: 15px;
-color: #a5adce;
-font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
     <widget class="Line" name="line_3">
      <property name="geometry">
       <rect>
@@ -607,254 +211,783 @@ border-radius: 5%;</string>
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QLabel" name="timeLabel_6">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>210</y>
-       <width>51</width>
-       <height>21</height>
+       <x>0</x>
+       <y>10</y>
+       <width>211</width>
+       <height>503</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,5">
+      <property name="spacing">
+       <number>19</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinAndMaxSize</enum>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="statusOn_1">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #ea999c;
+background-color: #232634;</string>
+          </property>
+          <property name="text">
+           <string>⏸️</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="habit_2">
+          <property name="minimumSize">
+           <size>
+            <width>161</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+border-radius: 0%;</string>
+          </property>
+          <property name="text">
+           <string>Habit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="timeLabel_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>31</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="statusOn_6">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>260</y>
-       <width>10</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #ea999c;
-background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>⏸️</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="statusOn_7">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>310</y>
-       <width>10</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #ea999c;
-background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>⏸️</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="statusOn_8">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>355</y>
-       <width>10</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #ea999c;
-background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>⏸️</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="statusOn_9">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>401</y>
-       <width>10</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #ea999c;
-background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>⏸️</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="statusOn_10">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>450</y>
-       <width>10</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #ea999c;
-background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>⏸️</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="statusOn_11">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>497</y>
-       <width>10</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: #ea999c;
-background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>⏸️</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_7">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>260</y>
-       <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+background-color: #232634;
+</string>
+          </property>
+          <property name="text">
+           <string>00</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="statusOn_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #ea999c;
+background-color: #232634;</string>
+          </property>
+          <property name="text">
+           <string>⏸️</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="habit_3">
+          <property name="minimumSize">
+           <size>
+            <width>161</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+border-radius: 0%;</string>
+          </property>
+          <property name="text">
+           <string>Habit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="timeLabel_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>31</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_8">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>310</y>
-       <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+background-color: #232634;
+</string>
+          </property>
+          <property name="text">
+           <string>00</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="statusOn_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #ea999c;
+background-color: #232634;</string>
+          </property>
+          <property name="text">
+           <string>⏸️</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="habit_4">
+          <property name="minimumSize">
+           <size>
+            <width>161</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+border-radius: 0%;</string>
+          </property>
+          <property name="text">
+           <string>Habit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="timeLabel_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>31</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_9">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>357</y>
-       <width>50</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+background-color: #232634;
+</string>
+          </property>
+          <property name="text">
+           <string>00</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="statusOn_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #ea999c;
+background-color: #232634;</string>
+          </property>
+          <property name="text">
+           <string>⏸️</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="habit_5">
+          <property name="minimumSize">
+           <size>
+            <width>161</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+border-radius: 0%;</string>
+          </property>
+          <property name="text">
+           <string>Habit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="timeLabel_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>31</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_10">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>404</y>
-       <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+background-color: #232634;
+</string>
+          </property>
+          <property name="text">
+           <string>00</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="statusOn_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #ea999c;
+background-color: #232634;</string>
+          </property>
+          <property name="text">
+           <string>⏸️</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="habit_6">
+          <property name="minimumSize">
+           <size>
+            <width>161</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+border-radius: 0%;</string>
+          </property>
+          <property name="text">
+           <string>Habit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="timeLabel_6">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>31</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_11">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>450</y>
-       <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+background-color: #232634;
+</string>
+          </property>
+          <property name="text">
+           <string>00</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="statusOn_6">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #ea999c;
+background-color: #232634;</string>
+          </property>
+          <property name="text">
+           <string>⏸️</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="habit_7">
+          <property name="minimumSize">
+           <size>
+            <width>161</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+border-radius: 0%;</string>
+          </property>
+          <property name="text">
+           <string>Habit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="timeLabel_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>31</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="timeLabel_12">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>498</y>
-       <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+background-color: #232634;
+</string>
+          </property>
+          <property name="text">
+           <string>00</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="statusOn_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #ea999c;
+background-color: #232634;</string>
+          </property>
+          <property name="text">
+           <string>⏸️</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="habit_8">
+          <property name="minimumSize">
+           <size>
+            <width>161</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+border-radius: 0%;</string>
+          </property>
+          <property name="text">
+           <string>Habit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="timeLabel_8">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>31</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 5%;</string>
-     </property>
-     <property name="text">
-      <string>00</string>
-     </property>
+background-color: #232634;
+</string>
+          </property>
+          <property name="text">
+           <string>00</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="statusOn_8">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #ea999c;
+background-color: #232634;</string>
+          </property>
+          <property name="text">
+           <string>⏸️</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="habit_9">
+          <property name="minimumSize">
+           <size>
+            <width>161</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+border-radius: 0%;</string>
+          </property>
+          <property name="text">
+           <string>Habit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="timeLabel_9">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>31</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+font-size: 15px;
+color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+</string>
+          </property>
+          <property name="text">
+           <string>00</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_10">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="statusOn_9">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #ea999c;
+background-color: #232634;</string>
+          </property>
+          <property name="text">
+           <string>⏸️</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="habit_10">
+          <property name="minimumSize">
+           <size>
+            <width>161</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+border-radius: 0%;</string>
+          </property>
+          <property name="text">
+           <string>Habit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="timeLabel_10">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>31</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+font-size: 15px;
+color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+</string>
+          </property>
+          <property name="text">
+           <string>00</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_11">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="statusOn_10">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #ea999c;
+background-color: #232634;</string>
+          </property>
+          <property name="text">
+           <string>⏸️</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="habit_11">
+          <property name="minimumSize">
+           <size>
+            <width>161</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+border-radius: 0%;</string>
+          </property>
+          <property name="text">
+           <string>Habit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="timeLabel_11">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>31</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>31</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+font-size: 15px;
+color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+</string>
+          </property>
+          <property name="text">
+           <string>00</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -874,6 +1007,68 @@ border-radius: 5%;</string>
     </property>
     <property name="text">
      <string>new activity</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="timeLabel_12">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>690</y>
+      <width>98</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>31</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font-size: 15px;
+color: #a5adce;
+font-family: Liberation Mono;
+background-color: #232634;
+</string>
+    </property>
+    <property name="text">
+     <string>00</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="statusOn_11">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>740</y>
+      <width>197</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ea999c;
+background-color: #232634;</string>
+    </property>
+    <property name="text">
+     <string>⏸️</string>
     </property>
    </widget>
   </widget>

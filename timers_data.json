@@ -1,43 +1,43 @@
 {
     "time_button_2": {
-        "status": true,
-        "seconds": 137
+        "status": false,
+        "seconds": 48674
     },
     "time_button_3": {
-        "status": true,
-        "seconds": 132
+        "status": false,
+        "seconds": 325
     },
     "time_button_4": {
         "status": false,
-        "seconds": 6
+        "seconds": 187
     },
     "time_button_5": {
-        "status": true,
-        "seconds": 1
+        "status": false,
+        "seconds": 381
     },
     "time_button_6": {
         "status": false,
-        "seconds": 1
+        "seconds": 276
     },
     "time_button_7": {
         "status": false,
-        "seconds": 0
+        "seconds": 430
     },
     "time_button_8": {
         "status": false,
-        "seconds": 13
+        "seconds": 234
     },
     "time_button_9": {
         "status": false,
-        "seconds": 54
+        "seconds": 204
     },
     "time_button_10": {
         "status": false,
-        "seconds": 56
+        "seconds": 112
     },
     "time_button_11": {
         "status": false,
-        "seconds": 8
+        "seconds": 93
     },
-    "button_count": 10
+    "button_count": 7
 }
