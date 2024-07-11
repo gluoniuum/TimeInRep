@@ -12,7 +12,7 @@ import json
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__() 
-        uic.loadUi("mainwind.ui", self)  # Підключення візуалу з дизайнера
+        uic.loadUi("/home/gluon/TimeInRep/mainwind.ui", self)  # Підключення візуалу з дизайнера
         
 ########################################################################################*
         
@@ -62,55 +62,18 @@ class MainWindow(QMainWindow):
         self.current_button = None
         
 #! таймерасти
-        self.time_button_2 = {
-            'status' : False,
-            'seconds': 0,
-        }
-        self.time_button_3 = {
-            'status' : False,
-            'seconds': 0,
-        }
-        self.time_button_4 = {
-            'status' : False,
-            'seconds': 0,
-        }
-        self.time_button_5 = {
-            'status' : False,
-            'seconds': 0,
-        }
-        self.time_button_6 = {
-            'status' : False,
-            'seconds': 0,
-        }
-        self.time_button_7 = {
-            'status' : False,
-            'seconds': 0,
-        }
-        self.time_button_8 = {
-            'status' : False,
-            'seconds': 0,
-        }
-        self.time_button_9 = {
-            'status' : False,
-            'seconds': 0,
-        }
-        self.time_button_10 = {
-            'status' : False,
-            'seconds': 0,
-        }
-        self.time_button_11 = {
-            'status' : False,
-            'seconds': 0,
-        }
-        self.time_button_12 = {
-            'status' : False,
-            'seconds': 0,
-        }
-        self.time_buttonss = {
-        'time_button_2': self.time_button_2,
-        'time_button_3': self.time_button_3,
-    }
-
+        self.time_button_2 = {'name': 'Timer 2', 'status': False, 'seconds': 0}
+        self.time_button_3 = {'name': 'Timer 3', 'status': False, 'seconds': 0}
+        self.time_button_4 = {'name': 'Timer 4', 'status': False, 'seconds': 0}
+        self.time_button_5 = {'name': 'Timer 5', 'status': False, 'seconds': 0}
+        self.time_button_6 = {'name': 'Timer 6', 'status': False, 'seconds': 0}
+        self.time_button_7 = {'name': 'Timer 7', 'status': False, 'seconds': 0}
+        self.time_button_8 = {'name': 'Timer 8', 'status': False, 'seconds': 0}
+        self.time_button_9 = {'name': 'Timer 9', 'status': False, 'seconds': 0}
+        self.time_button_10 = {'name': 'Timer 10', 'status': False, 'seconds': 0}
+        self.time_button_11 = {'name': 'Timer 11', 'status': False, 'seconds': 0}
+        self.time_button_12 = {'name': 'Timer 12', 'status': False, 'seconds': 0}
+       
 
 #* коннекти
         self.pushButton.clicked.connect(self.open_addGameWidget)
@@ -217,51 +180,101 @@ class MainWindow(QMainWindow):
         print(f'мінус: {self.button_count}')
         self.edit_window.hide()
         print(f' flfllf {self.whozis.objectName()}')
+        
         if self.whozis.objectName() == "habit_2":
             self.timeLabel_2.hide()
-            self.time_button_2['status'] = False
+            
             self.update_timer_forStart()
+
+            
         if self.whozis.objectName() == "habit_3":
             self.timeLabel_3.hide()
             self.statusOn_2.hide()
             self.time_button_3['status'] = False
+            self.time_button_3['seconds'] = 0
+            self.update_timer_forStart()
+
+
+            
         if self.whozis.objectName() == "habit_4":
             self.timeLabel_4.hide()
             self.statusOn_3.hide()
             self.time_button_4['status'] = False
+            self.time_button_3['seconds'] = 0
+            self.update_timer_forStart()
+
+
+
         if self.whozis.objectName() == "habit_5":
             self.timeLabel_5.hide()
             self.statusOn_4.hide()
             self.time_button_5['status'] = False
+            self.time_button_3['seconds'] = 0
+            self.update_timer_forStart()
+
+
+
         if self.whozis.objectName() == "habit_6":
             self.timeLabel_6.hide()
             self.statusOn_5.hide()
-
             self.time_button_6['status'] = False
+            self.time_button_3['seconds'] = 0
+            self.update_timer_forStart()
+
+
+
         if self.whozis.objectName() == "habit_6":
             self.timeLabel_7.hide() 
             self.statusOn_6.hide()
             self.time_button_7['status'] = False
+            self.time_button_3['seconds'] = 0
+            self.update_timer_forStart()
+
+
+
         if self.whozis.objectName() == "habit_7":
             self.time_button_8['status'] = False
             self.timeLabel_8.hide() 
             self.statusOn_7.hide()
+            self.time_button_3['seconds'] = 0
+            self.update_timer_forStart()
+
+
+
         if self.whozis.objectName() == "habit_8":
             self.time_button_9['status'] = False
             self.timeLabel_9.hide() 
             self.statusOn_8.hide()
+            self.time_button_3['seconds'] = 0
+            self.update_timer_forStart()
+
+
+
         if self.whozis.objectName() == "habit_9":
             self.time_button_10['status'] = False
             self.timeLabel_10.hide() 
             self.statusOn_9.hide()
+            self.time_button_3['seconds'] = 0
+            self.update_timer_forStart()
+
+
+
         if self.whozis.objectName() == "habit_10":
             self.time_button_11['status'] = False
             self.timeLabel_11.hide() 
             self.statusOn_10.hide()
+            self.time_button_3['seconds'] = 0
+            self.update_timer_forStart()
+
+
+
         if self.whozis.objectName() == "habit_11":
             self.time_button_12['status'] = False
             self.statusOn_11.hide()
-            self.timeLabel_12.hide() 
+            self.timeLabel_12.hide()
+            self.time_button_3['seconds'] = 0
+            self.update_timer_forStart()
+
         
             
        
@@ -277,10 +290,14 @@ class MainWindow(QMainWindow):
 
 #?    Кнопарики сайдбари, сотворення і тд                                                                                                                                                             #?
     def counter(self):
-        self.button_count += 1
-        print(self.button_count)
-        return self.button_count
-    
+        if self.button_count < 12:
+            self.button_count += 1
+            print(self.button_count)
+            return self.button_count
+        if self.button_count > 12:
+            
+            print(self.button_count)
+            
 # 
        
 #?    Секундомір і тд      
@@ -400,8 +417,11 @@ class MainWindow(QMainWindow):
             self.update_timer_forStart()
             self.time_button_12['status'] = False
     def update_timer_forStart(self):
+
+##? замiна маячнi
+        
+     
 ##* маячня вся
-        self.statusOn_3.hide()
         
     ###? маячня 1         
         if self.time_button_2['status'] == True:
@@ -409,20 +429,20 @@ class MainWindow(QMainWindow):
             self.statusOn_1.show()
             
             self.time_button_2['seconds'] += 1  # Оновлюємо кількість секунд на 1
-            if self.time_button_2['seconds'] < 60:
+            if self.time_button_2['seconds'] <= 60:
                decimal_minutes = (self.time_button_2['seconds']) / 60
                small_formatted_time = f"{decimal_minutes:.1f}m"
              
-            elif self.time_button_2['seconds'] < 360:
+            elif self.time_button_2['seconds'] <= 360:
                 minutes = (self.time_button_2['seconds']) // 60
                 
                 small_formatted_time = f"{minutes:2d}m"
 
-            elif self.time_button_2['seconds'] < 3600:
+            elif self.time_button_2['seconds'] <= 3600:
                 decimal_hours = (self.time_button_2['seconds']) / 3600
                 small_formatted_time = f"{decimal_hours:.1f}h"
 
-            elif self.time_button_2['seconds'] > 3600:
+            elif self.time_button_2['seconds'] >= 3600:
                 decimal_hours = (self.time_button_2['seconds']) // 3600
                 small_formatted_time = f"{decimal_hours:2d}h"
 
@@ -453,7 +473,7 @@ class MainWindow(QMainWindow):
                 
                 small_formatted_time = f"{minutes:3d}m"
 
-            elif self.time_button_3['seconds'] < 3600:
+            elif self.time_button_3['seconds'] >= 3600:
                 decimal_hours = (self.time_button_3['seconds']) / 3600
                 small_formatted_time = f"{decimal_hours:.1f}h"
 
@@ -484,7 +504,7 @@ class MainWindow(QMainWindow):
                 
                 small_formatted_time = f"{minutes:3d}m"
 
-            elif self.time_button_4['seconds'] < 3600:
+            elif self.time_button_4['seconds'] >= 3600:
                 decimal_hours = (self.time_button_4['seconds']) / 3600
                 small_formatted_time = f"{decimal_hours:.1f}h"
 
@@ -516,7 +536,7 @@ class MainWindow(QMainWindow):
                 
                 small_formatted_time = f"{minutes:3d}m"
 
-            elif self.time_button_5['seconds'] < 3600:
+            elif self.time_button_5['seconds'] >= 3600:
                 decimal_hours = (self.time_button_5['seconds']) / 3600
                 small_formatted_time = f"{decimal_hours:.1f}h"
 
@@ -548,7 +568,7 @@ class MainWindow(QMainWindow):
                 
                 small_formatted_time = f"{minutes:3d}m"
 
-            elif self.time_button_6['seconds'] < 3600:
+            elif self.time_button_6['seconds'] >= 3600:
                 decimal_hours = (self.time_button_6['seconds']) / 3600
                 small_formatted_time = f"{decimal_hours:.1f}h"
 
@@ -579,7 +599,7 @@ class MainWindow(QMainWindow):
                 
                 small_formatted_time = f"{minutes:3d}m"
 
-            elif self.time_button_7['seconds'] < 3600:
+            elif self.time_button_7['seconds'] >= 3600:
                 decimal_hours = (self.time_button_6['seconds']) / 3600
                 small_formatted_time = f"{decimal_hours:.1f}h"
 
@@ -587,7 +607,7 @@ class MainWindow(QMainWindow):
             minutes = (self.time_button_7['seconds'] % 3600) // 60
             seconds = self.time_button_7['seconds'] % 60
             
-            self.formatted_time_5 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
+            self.formatted_time_6 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
             self.timer_sync()
              
             self.timeLabel_6.setText(small_formatted_time)
@@ -615,7 +635,7 @@ class MainWindow(QMainWindow):
                 
                 small_formatted_time = f"{minutes:3d}m"
 
-            elif self.time_button_8['seconds'] < 3600:
+            elif self.time_button_8['seconds'] >= 3600:
                 decimal_hours = (self.time_button_8['seconds']) / 3600
                 small_formatted_time = f"{decimal_hours:.1f}h"
 
@@ -646,7 +666,7 @@ class MainWindow(QMainWindow):
                 
                 small_formatted_time = f"{minutes:3d}m"
 
-            elif self.time_button_9['seconds'] < 3600:
+            elif self.time_button_9['seconds'] >= 3600:
                 decimal_hours = (self.time_button_9['seconds']) / 3600
                 small_formatted_time = f"{decimal_hours:.1f}h"
 
@@ -677,7 +697,7 @@ class MainWindow(QMainWindow):
                 
                 small_formatted_time = f"{minutes:3d}m"
 
-            elif self.time_button_10['seconds'] < 3600:
+            elif self.time_button_10['seconds'] >= 3600:
                 decimal_hours = (self.time_button_10['seconds']) / 3600
                 small_formatted_time = f"{decimal_hours:.1f}h"
 
@@ -708,7 +728,7 @@ class MainWindow(QMainWindow):
                 
                 small_formatted_time = f"{minutes:3d}m"
 
-            elif self.time_button_11['seconds'] < 3600:
+            elif self.time_button_11['seconds'] >= 3600:
                 decimal_hours = (self.time_button_11['seconds']) / 3600
                 small_formatted_time = f"{decimal_hours:.1f}h"
 
@@ -739,7 +759,7 @@ class MainWindow(QMainWindow):
                 
                 small_formatted_time = f"{minutes:3d}m"
 
-            elif self.time_button_12['seconds'] < 3600:
+            elif self.time_button_12['seconds'] >= 3600:
                 decimal_hours = (self.time_button_12['seconds']) / 3600
                 small_formatted_time = f"{decimal_hours:.1f}h"
 
@@ -860,49 +880,74 @@ class MainWindow(QMainWindow):
             self.habit_2.show()
             self.timeLabel_2.show()
             self.habit_2.setText(game_name)
+            
+            self.time_button_2['name'] = self.habit_2.text()
+            self.update_timer_forStart()
     
         if self.button_count == 3:
             self.habit_3.show()
             self.timeLabel_3.show()
             self.habit_3.setText(game_name)
+            
+            
+            self.update_timer_forStart()
 
         if self.button_count == 4:
             self.habit_4.show()
             self.timeLabel_4.show()
             self.habit_4.setText(game_name)
-        
-        elif self.button_count == 5:
+           
+            self.update_timer_forStart()
+        if self.button_count == 5:
             self.habit_5.show()
             self.timeLabel_5.show()
             self.habit_5.setText(game_name)
+            
+            self.update_timer_forStart()
 
-        elif self.button_count == 6:
+        if self.button_count == 6:
             self.habit_6.show()
             self.timeLabel_6.show()
             self.habit_6.setText(game_name)
+            
+            self.update_timer_forStart()
 
-        elif self.button_count == 7:
+        if self.button_count == 7:
             self.habit_7.show()
             self.habit_7.setText(game_name)
+            self.timeLabel_7.show()
+            
+            self.update_timer_forStart()
 
-        elif self.button_count == 8:
+        if self.button_count == 8:
             self.habit_8.show()
             self.habit_8.setText(game_name)
+            self.timeLabel_8.show()
+            
+            self.update_timer_forStart()
 
-        elif self.button_count == 9:
+        if self.button_count == 9:
             self.habit_9.show()
-            self.habit_9.setText(game_name)
+            self.timeLabel_9.show()
+            
+            self.update_timer_forStart()
 
-        elif self.button_count == 10:
+        if self.button_count == 10:
             self.habit_10.show()
             self.habit_10.setText(game_name)
+            self.timeLabel_10.show()
+            
+            self.update_timer_forStart()
 
-        elif self.button_count == 11:
+        if self.button_count == 11:
             self.habit_11.show()
             self.habit_11.setText(game_name)
+            self.timeLabel_11.show()
+            
+            self.update_timer_forStart()
       
         
-        else:
+        if self.button_count == 12:
             QMessageBox.critical(self, "fck its error///", "You reached maximum", QMessageBox.Ok)
 
         self.new_window.hide()
@@ -910,49 +955,59 @@ class MainWindow(QMainWindow):
         if self.button_count >= 2:
             self.habit_2.show()
             self.timeLabel_2.show()
+            self.habit_2.setText(self.time_button_2['name'])
             
         if self.button_count >= 3:
             self.habit_3.show()
             self.timeLabel_3.show()
+            self.habit_3.setText(self.time_button_3['name'])
             
         if self.button_count >= 4:
             self.habit_4.show()
             self.timeLabel_4.show()
+            self.habit_4.setText(self.time_button_4['name'])
             
         if self.button_count >= 5:
             self.habit_5.show()
             self.timeLabel_5.show()
+            self.habit_5.setText(self.time_button_2['name'])
             
         if self.button_count >= 6:
             self.habit_6.show()
             self.timeLabel_6.show()  
+            self.habit_6.setText(self.time_button_2['name'])
 
         if self.button_count >= 7:
             self.habit_7.show()
             self.timeLabel_7.show() 
+            self.habit_7.setText(self.time_button_2['name'])
             
         if self.button_count >= 8:
             self.habit_8.show()
             self.timeLabel_8.show()  
+            self.habit_8.setText(self.time_button_2['name'])
 
         if self.button_count >= 9:
             self.habit_9.show()
             self.timeLabel_9.show() 
+            self.habit_9.setText(self.time_button_2['name'])
         
         if self.button_count >= 10:
             self.habit_10.show()
             self.timeLabel_10.show()  
+            self.habit_10.setText(self.time_button_2['name'])
 
         if self.button_count >= 11:
             self.habit_11.show()
             self.timeLabel_11.show() 
+            self.habit_2.setText(self.time_button_2['name'])
     
 #? ну собсно вибирання звички
     def chose_activity(self):
         self.chosedActivity = self.sender()
         print(f"Chosed activity: {self.chosedActivity.objectName()}")
         self.choose = self.chosedActivity.objectName()
-        print(self.choose)
+        
         choice = self.chosedActivity 
         self.choose_indicator(choice)
         self.timer_sync()
@@ -1071,28 +1126,32 @@ class MainWindow(QMainWindow):
             'time_button_11': self.time_button_11,
             'button_count': self.button_count
         }
-        with open('timers_data.json', 'w') as file:
+        with open('timers_data46784678.json', 'w') as file:
             json.dump(data, file, indent=4)
         print('Data saved successfully.')
+
     
     def load_data(self):
         try:
-            with open('timers_data.json', 'r') as file:
+            with open('timers_data2.json', 'r') as file:
                 data = json.load(file)
-                self.time_button_2.update({'seconds': data.get('time_button_2', {}).get('seconds', self.time_button_2['seconds']), 'status': False}),
-                self.time_button_3.update({'seconds': data.get('time_button_3', {}).get('seconds', self.time_button_3['seconds']), 'status': False})
-                self.time_button_4.update({'seconds': data.get('time_button_4', {}).get('seconds', self.time_button_4['seconds']), 'status': False})
-                self.time_button_5.update({'seconds': data.get('time_button_5', {}).get('seconds', self.time_button_5['seconds']), 'status': False})
-                self.time_button_6.update({'seconds': data.get('time_button_6', {}).get('seconds', self.time_button_6['seconds']), 'status': False})
-                self.time_button_7.update({'seconds': data.get('time_button_7', {}).get('seconds', self.time_button_7['seconds']), 'status': False})
-                self.time_button_8.update({'seconds': data.get('time_button_8', {}).get('seconds', self.time_button_8['seconds']), 'status': False})
-                self.time_button_9.update({'seconds': data.get('time_button_9', {}).get('seconds', self.time_button_9['seconds']), 'status': False})
-                self.time_button_10.update({'seconds': data.get('time_button_10', {}).get('seconds', self.time_button_10['seconds']), 'status': False})
-                self.time_button_11.update({'seconds': data.get('time_button_11', {}).get('seconds', self.time_button_11['seconds']), 'status': False})
-                self.button_count = data.get('button_count', {})
+                self.time_button_2.update({'name': data.get('time_button_2', {}).get('name', self.time_button_2['name']), 'seconds': data.get('time_button_2', {}).get('seconds', 0), 'status': False})
+                self.time_button_3.update({'name': data.get('time_button_3', {}).get('name', self.time_button_3['name']), 'seconds': data.get('time_button_3', {}).get('seconds', 0), 'status': False})
+                self.time_button_4.update({'name': data.get('time_button_4', {}).get('name', self.time_button_4['name']), 'seconds': data.get('time_button_4', {}).get('seconds', 0), 'status': False})
+                self.time_button_5.update({'name': data.get('time_button_5', {}).get('name', self.time_button_5['name']), 'seconds': data.get('time_button_5', {}).get('seconds', 0), 'status': False})
+                self.time_button_6.update({'name': data.get('time_button_6', {}).get('name', self.time_button_6['name']), 'seconds': data.get('time_button_6', {}).get('seconds', 0), 'status': False})
+                self.time_button_7.update({'name': data.get('time_button_7', {}).get('name', self.time_button_7['name']), 'seconds': data.get('time_button_7', {}).get('seconds', 0), 'status': False})
+                self.time_button_8.update({'name': data.get('time_button_8', {}).get('name', self.time_button_8['name']), 'seconds': data.get('time_button_8', {}).get('seconds', 0), 'status': False})
+                self.time_button_9.update({'name': data.get('time_button_9', {}).get('name', self.time_button_9['name']), 'seconds': data.get('time_button_9', {}).get('seconds', 0), 'status': False})
+                self.time_button_10.update({'name': data.get('time_button_10', {}).get('name', self.time_button_10['name']), 'seconds': data.get('time_button_10', {}).get('seconds', 0), 'status': False})
+                self.time_button_11.update({'name': data.get('time_button_11', {}).get('name', self.time_button_11['name']), 'seconds': data.get('time_button_11', {}).get('seconds', 0), 'status': False})
+                self.button_count = data.get('button_count', 0)
             print('Data loaded successfully.')
         except FileNotFoundError:
             print('No data file found.')
+
+        
+
         
 #########################################################################################*
 if __name__ == "__main__":

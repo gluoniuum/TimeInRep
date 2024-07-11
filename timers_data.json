@@ -1,43 +1,53 @@
 {
     "time_button_2": {
-        "status": false,
-        "seconds": 48674
+        "name": "code",
+        "status": true,
+        "seconds": 8036
     },
     "time_button_3": {
+        "name": "Timer 3",
         "status": false,
-        "seconds": 325
+        "seconds": 3
     },
     "time_button_4": {
+        "name": "Timer 4",
         "status": false,
-        "seconds": 187
+        "seconds": 3
     },
     "time_button_5": {
+        "name": "Timer 5",
         "status": false,
-        "seconds": 381
+        "seconds": 6
     },
     "time_button_6": {
+        "name": "Timer 6",
         "status": false,
-        "seconds": 276
+        "seconds": 3
     },
     "time_button_7": {
+        "name": "Timer 7",
         "status": false,
-        "seconds": 430
+        "seconds": 3
     },
     "time_button_8": {
+        "name": "Timer 8",
         "status": false,
-        "seconds": 234
+        "seconds": 3
     },
     "time_button_9": {
+        "name": "Timer 9",
         "status": false,
-        "seconds": 204
+        "seconds": 3
     },
     "time_button_10": {
+        "name": "Timer 10",
         "status": false,
-        "seconds": 112
+        "seconds": 3
     },
     "time_button_11": {
+        "name": "Timer 11",
         "status": false,
-        "seconds": 93
+        "seconds": 3
     },
-    "button_count": 7
+    "button_count": 4
 }
