@@ -60,7 +60,9 @@ class MainWindow(QMainWindow):
         self.elapsed_time = 0
         self.start_butt.setCheckable(True)
         self.current_button = None
-        
+        self.choice_butt = 0
+        self.small_formatted_time = f"{00:2d}s"
+        self.butt_num = self.habit_2
 #! таймерасти
         self.time_button_2 = {'name': 'Timer 2', 'status': False, 'seconds': 0}
         self.time_button_3 = {'name': 'Timer 3', 'status': False, 'seconds': 0}
@@ -73,17 +75,26 @@ class MainWindow(QMainWindow):
         self.time_button_10 = {'name': 'Timer 10', 'status': False, 'seconds': 0}
         self.time_button_11 = {'name': 'Timer 11', 'status': False, 'seconds': 0}
         self.time_button_12 = {'name': 'Timer 12', 'status': False, 'seconds': 0}
-       
-
-#* коннекти
+        self.time_buttons = {
+            'time_button_2': self.time_button_2,
+            'time_button_3': self.time_button_3,
+            'time_button_4': self.time_button_4,
+            'time_button_5': self.time_button_5,
+            'time_button_6': self.time_button_6,
+            'time_button_7': self.time_button_7,
+            # Добавьте остальные таймеры по аналогии
+        }        #* коннекти
         self.pushButton.clicked.connect(self.open_addGameWidget)
         self.pushButton.clicked.connect(self.counter)
         self.start_butt.clicked.connect(self.start_timer)
         self.start_butt.clicked.connect(self.value_changer)
         self.time_butt_2.clicked.connect(self.open_addTimeWidget)
-        self.timer.timeout.connect(self.update_timer_forStart)
+        self.timer.timeout.connect(self.zapuskator)
+        # self.timer.timeout.connect(self.update_timer_forStart)
+        # self.timer.timeout.connect(self.time_formattor)
+        # self.timer.timeout.connect(self.timer_sync)
         self.auto_save.timeout.connect(self.save_data)
-        # self.pushButton.clicked.connect(self.contextMenuEvent)
+       
         
         
         
@@ -100,8 +111,8 @@ class MainWindow(QMainWindow):
         
         self.choose = 'habit_'
         
-        self.load_data()
-        self.load_game()
+        # self.load_data()
+        # self.load_game()
         
         self.saver_timer()
         self.value_on_start_updator()
@@ -302,6 +313,9 @@ class MainWindow(QMainWindow):
        
 #?    Секундомір і тд      
     def start_timer(self):
+        # for timer_id in self.timer:
+            # timer = QTimer(self)
+            # timer.timeout.connect(lambda timer_id=timer_id: self.update_timer(timer_id))
         self.timer.start(1000)  
     def saver_timer(self):
         self.auto_save.start(10000)       
@@ -309,7 +323,7 @@ class MainWindow(QMainWindow):
         if self.start_butt.isChecked():
             if self.choose == 'habit_2':
                 self.time_button_2['status'] = not self.time_button_2['status']
-                print(self.time_button_2['status'])
+                print(f't butt 2 status: {self.time_button_2['status']}')
                 
                 self.update_timer_forStart()
 
@@ -416,365 +430,54 @@ class MainWindow(QMainWindow):
             self.time_button_12['status'] = True
             self.update_timer_forStart()
             self.time_button_12['status'] = False
-    def update_timer_forStart(self):
-
-##? замiна маячнi
-        
-     
-##* маячня вся
-        
-    ###? маячня 1         
-        if self.time_button_2['status'] == True:
-            
-            self.statusOn_1.show()
-            
-            self.time_button_2['seconds'] += 1  # Оновлюємо кількість секунд на 1
-            if self.time_button_2['seconds'] <= 60:
-               decimal_minutes = (self.time_button_2['seconds']) / 60
-               small_formatted_time = f"{decimal_minutes:.1f}m"
-             
-            elif self.time_button_2['seconds'] <= 360:
-                minutes = (self.time_button_2['seconds']) // 60
-                
-                small_formatted_time = f"{minutes:2d}m"
-
-            elif self.time_button_2['seconds'] <= 3600:
-                decimal_hours = (self.time_button_2['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.1f}h"
-
-            elif self.time_button_2['seconds'] >= 3600:
-                decimal_hours = (self.time_button_2['seconds']) // 3600
-                small_formatted_time = f"{decimal_hours:2d}h"
-
-            hours = self.time_button_2['seconds'] // 3600
-            minutes = (self.time_button_2['seconds'] % 3600) // 60
-            seconds = self.time_button_2['seconds'] % 60
-
-            
-            self.formatted_time_1 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            self.timer_sync()
-             
-            self.timeLabel_2.setText(small_formatted_time)
-            
-        if self.time_button_2['status'] == False:
-            self.statusOn_1.hide()
-
-    ###? маячня 2
-        if self.time_button_3['status'] == True:
-            self.statusOn_2.show()
-           
-            self.time_button_3['seconds'] += 1  # Оновлюємо кількість секунд на 1
-            if self.time_button_3['seconds'] < 60:
-               decimal_minutes = (self.time_button_3['seconds']) / 60
-               small_formatted_time = f"{decimal_minutes:.1f}m"
-             
-            elif self.time_button_3['seconds'] < 360:
-                minutes = (self.time_button_3['seconds']) // 60
-                
-                small_formatted_time = f"{minutes:3d}m"
-
-            elif self.time_button_3['seconds'] >= 3600:
-                decimal_hours = (self.time_button_3['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.1f}h"
-
-            hours = self.time_button_3['seconds'] // 3600
-            minutes = (self.time_button_3['seconds'] % 3600) // 60
-            seconds = self.time_button_3['seconds'] % 60
-            
-            self.formatted_time_2 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            self.timer_sync()
-             
-            self.timeLabel_3.setText(small_formatted_time)
-           
-        if self.time_button_3['status'] == False:
-            self.statusOn_2.hide()
-    ###? маячня 3
     
-        if self.time_button_4['status'] == True:
-            
-            self.statusOn_3.show()
-            
-            self.time_button_4['seconds'] += 1  # Оновлюємо кількість секунд на 1
-            if self.time_button_4['seconds'] < 60:
-               decimal_minutes = (self.time_button_4['seconds']) / 60
-               small_formatted_time = f"{decimal_minutes:.1f}m"
-             
-            elif self.time_button_4['seconds'] < 360:
-                minutes = (self.time_button_3['seconds']) // 60
-                
-                small_formatted_time = f"{minutes:3d}m"
-
-            elif self.time_button_4['seconds'] >= 3600:
-                decimal_hours = (self.time_button_4['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.1f}h"
-
-            hours = self.time_button_4['seconds'] // 3600
-            minutes = (self.time_button_4['seconds'] % 3600) // 60
-            seconds = self.time_button_4['seconds'] % 60
-            
-            self.formatted_time_5 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            self.timer_sync()
-             
-            self.timeLabel_4.setText(small_formatted_time)
-           
-        if self.time_button_4['status'] == False:
-            self.statusOn_3.hide()
-
-    ###? маячня 4
-        if self.time_button_5['status'] == True:
-            
-            self.statusOn_4.show()
-            
-            self.time_button_5['seconds'] += 1  # Оновлюємо кількість секунд на 1
-
-            if self.time_button_5['seconds'] < 60:
-               decimal_minutes = (self.time_button_5['seconds']) / 60
-               small_formatted_time = f"{decimal_minutes:.1f}m"
-             
-            elif self.time_button_5['seconds'] < 360:
-                minutes = (self.time_button_3['seconds']) // 60
-                
-                small_formatted_time = f"{minutes:3d}m"
-
-            elif self.time_button_5['seconds'] >= 3600:
-                decimal_hours = (self.time_button_5['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.1f}h"
-
-            hours = self.time_button_5['seconds'] // 3600
-            minutes = (self.time_button_5['seconds'] % 3600) // 60
-            seconds = self.time_button_5['seconds'] % 60
-            
-            self.formatted_time_5 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            self.timer_sync()
-             
-            self.timeLabel_5.setText(small_formatted_time)
-           
-        if self.time_button_5['status'] == False:
-            self.statusOn_4.hide()
-
-    ###? маячня 5
-        if self.time_button_6['status'] == True:
-            
-            self.statusOn_5.show()
-            
-            self.time_button_6['seconds'] += 1  # Оновлюємо кількість секунд на 1
-
-            if self.time_button_6['seconds'] < 60:
-               decimal_minutes = (self.time_button_6['seconds']) / 60
-               small_formatted_time = f"{decimal_minutes:.1f}m"
-             
-            elif self.time_button_6['seconds'] < 360:
-                minutes = (self.time_button_3['seconds']) // 60
-                
-                small_formatted_time = f"{minutes:3d}m"
-
-            elif self.time_button_6['seconds'] >= 3600:
-                decimal_hours = (self.time_button_6['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.1f}h"
-
-            hours = self.time_button_6['seconds'] // 3600
-            minutes = (self.time_button_6['seconds'] % 3600) // 60
-            seconds = self.time_button_6['seconds'] % 60
-            
-            self.formatted_time_5 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            self.timer_sync()
-             
-            self.timeLabel_6.setText(small_formatted_time)
-           
-        if self.time_button_6['status'] == False:
-            self.statusOn_5.hide()
-    ###? маячня 6
-        if self.time_button_7['status'] == True:
-            
-            self.statusOn_6.show()
-            
-            self.time_button_7['seconds'] += 1  # Оновлюємо кількість секунд на 1
-
-            if self.time_button_7['seconds'] < 60:
-               decimal_minutes = (self.time_button_6['seconds']) / 60
-               small_formatted_time = f"{decimal_minutes:.1f}m"
-             
-            elif self.time_button_7['seconds'] < 360:
-                minutes = (self.time_button_3['seconds']) // 60
-                
-                small_formatted_time = f"{minutes:3d}m"
-
-            elif self.time_button_7['seconds'] >= 3600:
-                decimal_hours = (self.time_button_6['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.1f}h"
-
-            hours = self.time_button_7['seconds'] // 3600
-            minutes = (self.time_button_7['seconds'] % 3600) // 60
-            seconds = self.time_button_7['seconds'] % 60
-            
-            self.formatted_time_6 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            self.timer_sync()
-             
-            self.timeLabel_6.setText(small_formatted_time)
-           
-        if self.time_button_7['status'] == False:
-            self.statusOn_6.hide()         
-
-  
         
-           
+##? замiна маячнi
+    
+    # def set_value(self, number):
+    #     setattr(self, f"time_button_{number}", {'seconds': value})
+        
+    
+        
+    def get_value(self, number):
+        timer_key = f"time_button_{number}"
+        selected_timer = self.time_buttons.get(timer_key)
+        print (f'get_value: {selected_timer['status']}')
+       # self.timer_po_sut(selected_timer)
 
-    ###? маячня 7
-        if self.time_button_8['status'] == True:
-            
-            self.statusOn_7.show()
-            
-            self.time_button_8['seconds'] += 1  # Оновлюємо кількість секунд на 1
+    def zapuskator(self):
+        print(self.time_button_2['seconds'])
+        if self.time_button_2['status'] == True:
+            self.time_button_2['seconds'] += 1
+            self.time_formattor(self.time_button_2)
+        if self.time_button_3['status'] == True:
+            self.time_button_3['seconds'] += 1
+            self.time_formattor(self.time_button_3)
 
-            if self.time_button_8['seconds'] < 60:
-               decimal_minutes = (self.time_button_8['seconds']) / 60
-               small_formatted_time = f"{decimal_minutes:.1f}m"
-             
-            elif self.time_button_8['seconds'] < 360:
-                minutes = (self.time_button_3['seconds']) // 602
-                
-                small_formatted_time = f"{minutes:3d}m"
+   
 
-            elif self.time_button_8['seconds'] >= 3600:
-                decimal_hours = (self.time_button_8['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.1f}h"
+    def time_formattor(self, button):
+        seconds = button['seconds']
+        if seconds < 60:
+            self.small_formatted_time = f"{seconds:.1f}s"
+        elif seconds < 3600:
+            minutes = seconds // 60
+            self.small_formatted_time = f"{minutes:02d}m {seconds % 60:02d}s"
+        elif seconds < 86400:
+            hours = seconds // 3600
+            minutes = (seconds % 3600) // 60
+            self.small_formatted_time = f"{hours:02d}h {minutes:02d}m"
+        
+        
 
-            hours = self.time_button_8['seconds'] // 3600
-            minutes = (self.time_button_8['seconds'] % 3600) // 60
-            seconds = self.time_button_8['seconds'] % 60
-            
-            self.formatted_time_7 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            self.timer_sync()
-             
-            self.timeLabel_7.setText(small_formatted_time)
-           
-        if self.time_button_8['status'] == False:
-            self.statusOn_7.hide()  
-    ###? маячня 8
-        if self.time_button_9['status'] == True:
-            
-            self.statusOn_8.show()
-            
-            self.time_button_9['seconds'] += 1  # Оновлюємо кількість секунд на 1
+    def update_timer_forStart(self):
+        
 
-            if self.time_button_9['seconds'] < 60:
-               decimal_minutes = (self.time_button_9['seconds']) / 60
-               small_formatted_time = f"{decimal_minutes:.1f}m"
-             
-            elif self.time_button_9['seconds'] < 360:
-                minutes = (self.time_button_3['seconds']) // 602
-                
-                small_formatted_time = f"{minutes:3d}m"
+        self.timer_sync()
+        
+        self.timeLabel_2.setText(self.small_formatted_time)
 
-            elif self.time_button_9['seconds'] >= 3600:
-                decimal_hours = (self.time_button_9['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.1f}h"
-
-            hours = self.time_button_9['seconds'] // 3600
-            minutes = (self.time_button_9['seconds'] % 3600) // 60
-            seconds = self.time_button_9['seconds'] % 60
-            
-            self.formatted_time_8 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            self.timer_sync()
-             
-            self.timeLabel_9.setText(small_formatted_time)
-           
-        if self.time_button_9['status'] == False:
-            self.statusOn_8.hide()  
-    ###? маячня 9
-        if self.time_button_10['status'] == True:
-            
-            self.statusOn_9.show()
-            
-            self.time_button_10['seconds'] += 1  # Оновлюємо кількість секунд на 1
-
-            if self.time_button_10['seconds'] < 60:
-               decimal_minutes = (self.time_button_10['seconds']) / 60
-               small_formatted_time = f"{decimal_minutes:.1f}m"
-             
-            elif self.time_button_10['seconds'] < 360:
-                minutes = (self.time_button_3['seconds']) // 602
-                
-                small_formatted_time = f"{minutes:3d}m"
-
-            elif self.time_button_10['seconds'] >= 3600:
-                decimal_hours = (self.time_button_10['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.1f}h"
-
-            hours = self.time_button_10['seconds'] // 3600
-            minutes = (self.time_button_10['seconds'] % 3600) // 60
-            seconds = self.time_button_10['seconds'] % 60
-            
-            self.formatted_time_9 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            self.timer_sync()
-             
-            self.timeLabel_10.setText(small_formatted_time)
-           
-        if self.time_button_10['status'] == False:
-            self.statusOn_9.hide()  
-    ###? маячня 10
-        if self.time_button_11['status'] == True:
-            
-            self.statusOn_10.show()
-            
-            self.time_button_11['seconds'] += 1  # Оновлюємо кількість секунд на 1
-
-            if self.time_button_11['seconds'] < 60:
-               decimal_minutes = (self.time_button_11['seconds']) / 60
-               small_formatted_time = f"{decimal_minutes:.1f}m"
-             
-            elif self.time_button_11['seconds'] < 360:
-                minutes = (self.time_button_3['seconds']) // 602
-                
-                small_formatted_time = f"{minutes:3d}m"
-
-            elif self.time_button_11['seconds'] >= 3600:
-                decimal_hours = (self.time_button_11['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.1f}h"
-
-            hours = self.time_button_11['seconds'] // 3600
-            minutes = (self.time_button_11['seconds'] % 3600) // 60
-            seconds = self.time_button_11['seconds'] % 60
-            
-            self.formatted_time_10 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            self.timer_sync()
-             
-            self.timeLabel_11.setText(small_formatted_time)
-           
-        if self.time_button_11['status'] == False:
-            self.statusOn_10.hide() 
-    # # ###? маячня 10
-        if self.time_button_12['status'] == True:
-            
-            self.statusOn_11.show()
-            
-            self.time_button_12['seconds'] += 1  # Оновлюємо кількість секунд на 1
-
-            if self.time_button_12['seconds'] < 60:
-               decimal_minutes = (self.time_button_12['seconds']) / 60
-               small_formatted_time = f"{decimal_minutes:.1f}m"
-             
-            elif self.time_button_12['seconds'] < 360:
-                minutes = (self.time_button_3['seconds']) // 602
-                
-                small_formatted_time = f"{minutes:3d}m"
-
-            elif self.time_button_12['seconds'] >= 3600:
-                decimal_hours = (self.time_button_12['seconds']) / 3600
-                small_formatted_time = f"{decimal_hours:.1f}h"
-
-            hours = self.time_button_12['seconds'] // 3600
-            minutes = (self.time_button_12['seconds'] % 3600) // 60
-            seconds = self.time_button_12['seconds'] % 60
-            
-            self.formatted_time_11 = f" {hours:02d}:{minutes:02d}:{seconds:02d}"
-            self.timer_sync()
-             
-            self.timeLabel_12.setText(small_formatted_time)
-           
-    #     if self.time_button_12['status'] == False:
-            self.statusOn_11.hide() 
-
+    
 
     
 #
@@ -1007,10 +710,23 @@ class MainWindow(QMainWindow):
         self.chosedActivity = self.sender()
         print(f"Chosed activity: {self.chosedActivity.objectName()}")
         self.choose = self.chosedActivity.objectName()
-        
         choice = self.chosedActivity 
+        
         self.choose_indicator(choice)
-        self.timer_sync()
+        print(f'geg{self.choose}')
+        if self.choose == 'habit_2':
+            choice_butt = 2
+            self.get_value(choice_butt)
+        if self.choose == 'habit_3':
+            choice_butt = 3
+            self.get_value(choice_butt)
+
+
+        
+    # Добавьте условия для остальных активностей, если нужно
+    
+    # Вызов функции get_value() с правильным параметром
+    
         
     def choose_indicator(self,choice):
         if hasattr(self, 'previous_choice') and self.previous_choice:
@@ -1029,7 +745,7 @@ class MainWindow(QMainWindow):
         
         
     def timer_sync(self):
-        if self.choose == 'habit_2':
+        if self.choose == 'habit_2' and self.time_button_2['status'] == True :
             hours = self.time_button_2['seconds'] // 3600
             minutes = (self.time_button_2['seconds'] % 3600) // 60
             seconds = self.time_button_2['seconds'] % 60
