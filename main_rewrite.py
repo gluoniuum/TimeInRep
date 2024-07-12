@@ -63,18 +63,18 @@ class MainWindow(QMainWindow):
         self.choice_butt = 0
         self.small_formatted_time = f"{00:2d}s"
         self.butt_num = self.habit_2
-#! таймерасти
-        self.time_button_2 = {'name': 'Timer 2', 'status': False, 'seconds': 0}
-        self.time_button_3 = {'name': 'Timer 3', 'status': False, 'seconds': 0}
-        self.time_button_4 = {'name': 'Timer 4', 'status': False, 'seconds': 0}
-        self.time_button_5 = {'name': 'Timer 5', 'status': False, 'seconds': 0}
-        self.time_button_6 = {'name': 'Timer 6', 'status': False, 'seconds': 0}
-        self.time_button_7 = {'name': 'Timer 7', 'status': False, 'seconds': 0}
-        self.time_button_8 = {'name': 'Timer 8', 'status': False, 'seconds': 0}
-        self.time_button_9 = {'name': 'Timer 9', 'status': False, 'seconds': 0}
-        self.time_button_10 = {'name': 'Timer 10', 'status': False, 'seconds': 0}
-        self.time_button_11 = {'name': 'Timer 11', 'status': False, 'seconds': 0}
-        self.time_button_12 = {'name': 'Timer 12', 'status': False, 'seconds': 0}
+#! таймерасти0
+        self.time_button_2 = {'name': 'Timer 2', 'status': False, 'seconds': 0, 'f_seconds': 0}
+        self.time_button_3 = {'name': 'Timer 3', 'status': False, 'seconds': 0, 'f_seconds': 0}
+        self.time_button_4 = {'name': 'Timer 4', 'status': False, 'seconds': 0, 'f_seconds': 0}
+        self.time_button_5 = {'name': 'Timer 5', 'status': False, 'seconds': 0, 'f_seconds': 0}
+        self.time_button_6 = {'name': 'Timer 6', 'status': False, 'seconds': 0, 'f_seconds': 0}
+        self.time_button_7 = {'name': 'Timer 7', 'status': False, 'seconds': 0, 'f_seconds': 0}
+        self.time_button_8 = {'name': 'Timer 8', 'status': False, 'seconds': 0, 'f_seconds': 0}
+        self.time_button_9 = {'name': 'Timer 9', 'status': False, 'seconds': 0, 'f_seconds': 0}
+        self.time_button_10 = {'name': 'Timer 10', 'status': False, 'seconds': 0, 'f_seconds': 0}
+        self.time_button_11 = {'name': 'Timer 11', 'status': False, 'seconds': 0, 'f_seconds': 0}
+        self.time_button_12 = {'name': 'Timer 12', 'status': False, 'seconds': 0, 'f_seconds': 0}
         self.time_buttons = {
             'time_button_2': self.time_button_2,
             'time_button_3': self.time_button_3,
@@ -82,6 +82,11 @@ class MainWindow(QMainWindow):
             'time_button_5': self.time_button_5,
             'time_button_6': self.time_button_6,
             'time_button_7': self.time_button_7,
+            'time_button_8': self.time_button_8,
+            'time_button_9': self.time_button_9,
+            'time_button_10': self.time_button_10,
+            'time_button_11': self.time_button_11,
+            'time_button_12': self.time_button_12,
             # Добавьте остальные таймеры по аналогии
         }        #* коннекти
         self.pushButton.clicked.connect(self.open_addGameWidget)
@@ -116,6 +121,7 @@ class MainWindow(QMainWindow):
         
         self.saver_timer()
         self.value_on_start_updator()
+        
         
 ##? Контекстне меню
         self.habit_2.installEventFilter(self)
@@ -440,6 +446,7 @@ class MainWindow(QMainWindow):
     
         
     def get_value(self, number):
+        
         timer_key = f"time_button_{number}"
         selected_timer = self.time_buttons.get(timer_key)
         print (f'get_value: {selected_timer['status']}')
@@ -450,35 +457,80 @@ class MainWindow(QMainWindow):
         if self.time_button_2['status'] == True:
             self.time_button_2['seconds'] += 1
             self.time_formattor(self.time_button_2)
+
         if self.time_button_3['status'] == True:
             self.time_button_3['seconds'] += 1
             self.time_formattor(self.time_button_3)
+                
+        if self.time_button_4['status'] == True:
+            self.time_button_4['seconds'] += 1
+            self.time_formattor(self.time_button_4)
+                
+        if self.time_button_5['status'] == True:
+            self.time_button_5['seconds'] += 1
+            self.time_formattor(self.time_button_5)
+                
+        if self.time_button_6['status'] == True:
+            self.time_button_6['seconds'] += 1
+            self.time_formattor(self.time_button_6)
+            
+        if self.time_button_7['status'] == True:
+            self.time_button_7['seconds'] += 1
+            self.time_formattor(self.time_button_3)  
+
+        if self.time_button_8['status'] == True:
+            self.time_button_8['seconds'] += 1
+            self.time_formattor(self.time_button_3)  
+
+        if self.time_button_9['status'] == True:
+            self.time_button_9['seconds'] += 1
+            self.time_formattor(self.time_button_3)
+                
+        if self.time_button_10['status'] == True:
+            self.time_button_10['seconds'] += 1
+            self.time_formattor(self.time_button_3)
+                
+        if self.time_button_11['status'] == True:
+            self.time_button_11['seconds'] += 1
+            self.time_formattor(self.time_button_3)   
+
+        if self.time_button_12['status'] == True:
+            self.time_button_12['seconds'] += 1
+            self.time_formattor(self.time_button_12)
+            
 
    
 
     def time_formattor(self, button):
         seconds = button['seconds']
+        
         if seconds < 60:
-            self.small_formatted_time = f"{seconds:.1f}s"
+            small_formatted_time = f"{seconds:.1f}s"
         elif seconds < 3600:
             minutes = seconds // 60
-            self.small_formatted_time = f"{minutes:02d}m {seconds % 60:02d}s"
-        elif seconds < 86400:
+            small_formatted_time = f"{minutes:02d}m"
+        elif seconds > 3600:
             hours = seconds // 3600
             minutes = (seconds % 3600) // 60
-            self.small_formatted_time = f"{hours:02d}h {minutes:02d}m"
-        
+            small_formatted_time = f"{hours:02d}h {minutes:02d}m"
+        button['f_seconds'] = small_formatted_time
+        self.small_timers()
         
 
     def update_timer_forStart(self):
-        
-
+        # it just nedeed because dependies {crying emojii ;( }
         self.timer_sync()
         
-        self.timeLabel_2.setText(self.small_formatted_time)
-
-    
-
+    def small_timers(self):
+        for number in range(2, 13):
+            timer_key = f"timeLabel_{number}"
+            button_key = f"time_button_{number}"
+            
+            label = getattr(self, timer_key)
+            button = self.time_buttons.get(button_key)
+            
+            if button:
+                label.setText(str(button['f_seconds']))
     
 #
         
@@ -714,14 +766,19 @@ class MainWindow(QMainWindow):
         
         self.choose_indicator(choice)
         print(f'geg{self.choose}')
-        if self.choose == 'habit_2':
-            choice_butt = 2
-            self.get_value(choice_butt)
-        if self.choose == 'habit_3':
-            choice_butt = 3
-            self.get_value(choice_butt)
 
 
+        for number in range(2, 11):
+            choose = f"habit_{number}"
+            
+            if self.choose == choose:
+                choice_butt = number
+                self.get_value(choice_butt)
+                print(choose)
+                print(f'kruk:{choice_butt}')
+            
+
+        
         
     # Добавьте условия для остальных активностей, если нужно
     
@@ -734,13 +791,13 @@ class MainWindow(QMainWindow):
             color: #a5adce;
             font-family: Liberation Mono;
             background-color: #232634;
-            border-radius: 5%; ''')  # Reset previous button style
+            border-radius: 0%; ''')  # Reset previous button style
         
         choice.setStyleSheet('''background-color: #232634; 
             color: #a5adce;
             font-family: Liberation Mono;
             background-color: #181926;
-            border-radius: 5%; ''')  
+            border-radius: 0%; ''')  
         self.previous_choice = choice  # Store the current choice as previous
         
         
