@@ -1,53 +1,63 @@
 {
     "time_button_2": {
-        "name": "example",
+        "name": "1",
         "status": false,
-        "seconds": 6
+        "seconds": 0,
+        "f_seconds": 0
     },
     "time_button_3": {
-        "name": "examplee",
+        "name": "Timer 3",
         "status": false,
-        "seconds": 0
+        "seconds": 0,
+        "f_seconds": 0
     },
     "time_button_4": {
-        "name": "examplee",
+        "name": "Timer 4",
         "status": false,
-        "seconds": 11
+        "seconds": 0,
+        "f_seconds": 0
     },
     "time_button_5": {
-        "name": "examplee",
+        "name": "Timer 5",
         "status": false,
-        "seconds": 22
+        "seconds": 0,
+        "f_seconds": 0
     },
     "time_button_6": {
-        "name": "examplee",
+        "name": "Timer 6",
         "status": false,
-        "seconds": 11
+        "seconds": 0,
+        "f_seconds": 0
     },
     "time_button_7": {
-        "name": "examplee",
+        "name": "Timer 7",
         "status": false,
-        "seconds": 11
+        "seconds": 0,
+        "f_seconds": 0
     },
     "time_button_8": {
-        "name": "examplee",
+        "name": "Timer 8",
         "status": false,
-        "seconds": 12
+        "seconds": 0,
+        "f_seconds": 0
     },
     "time_button_9": {
-        "name": "examplee",
+        "name": "Timer 9",
         "status": false,
-        "seconds": 11
+        "seconds": 0,
+        "f_seconds": 0
     },
     "time_button_10": {
-        "name": "examplee",
+        "name": "Timer 10",
         "status": false,
-        "seconds": 11
+        "seconds": 0,
+        "f_seconds": 0
     },
     "time_button_11": {
-        "name": "examplee",
+        "name": "Timer 11",
         "status": false,
-        "seconds": 11
+        "seconds": 0,
+        "f_seconds": 0
     },
-    "button_count": 3
+    "button_count": 2
 }

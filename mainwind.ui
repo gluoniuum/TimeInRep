@@ -289,7 +289,8 @@ border-radius: 0%;</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">border-radius-left: 10%;
+           <string notr="true">border-top-right-radius: 5%;
+border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
@@ -365,7 +366,8 @@ border-radius: 0%;</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">
+           <string notr="true">border-top-right-radius: 5%;
+border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
@@ -446,7 +448,8 @@ font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
 background-color: #232634;
-</string>
+border-top-right-radius: 5%;
+border-bottom-right-radius: 5%;</string>
           </property>
           <property name="text">
            <string>00</string>
@@ -517,7 +520,8 @@ border-radius: 0%;</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">
+           <string notr="true">border-top-right-radius: 5%;
+border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
@@ -593,7 +597,8 @@ border-radius: 0%;</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">
+           <string notr="true">border-top-right-radius: 5%;
+border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
@@ -669,7 +674,8 @@ border-radius: 0%;</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">
+           <string notr="true">border-top-right-radius: 5%;
+border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
@@ -745,7 +751,8 @@ border-radius: 0%;</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">
+           <string notr="true">border-top-right-radius: 5%;
+border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
@@ -821,7 +828,8 @@ border-radius: 0%;</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">
+           <string notr="true">border-top-right-radius: 5%;
+border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
@@ -897,7 +905,8 @@ border-radius: 0%;</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">
+           <string notr="true">border-top-right-radius: 5%;
+border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
@@ -973,7 +982,8 @@ border-radius: 0%;</string>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">
+           <string notr="true">border-top-right-radius: 5%;
+border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
