@@ -1,53 +1,63 @@
 {
     "time_button_2": {
+        "name": "example",
         "status": false,
-        "seconds": 5,
-        "name": "example"
+        "seconds": 63,
+        "f_seconds": 0
     },
     "time_button_3": {
+        "name": "examplee",
         "status": false,
         "seconds": 6,
-        "name": "examplee"
+        "f_seconds": 0
     },
     "time_button_4": {
+        "name": "examplee",
         "status": false,
         "seconds": 10,
-        "name": "examplee"
+        "f_seconds": 0
     },
     "time_button_5": {
+        "name": "examplee",
         "status": false,
-        "seconds": 20,
-        "name": "examplee"
+        "seconds": 0,
+        "f_seconds": 0
     },
     "time_button_6": {
+        "name": "examplee",
         "status": false,
-        "seconds": 10,
-        "name": "examplee"
+        "seconds": 0,
+        "f_seconds": "00m"
     },
     "time_button_7": {
+        "name": "examplee",
         "status": false,
         "seconds": 10,
-        "name": "examplee"
+        "f_seconds": 0
     },
     "time_button_8": {
+        "name": "examplee",
         "status": false,
         "seconds": 11,
-        "name": "examplee"
+        "f_seconds": 0
     },
     "time_button_9": {
+        "name": "examplee",
         "status": false,
         "seconds": 10,
-        "name": "examplee"
+        "f_seconds": 0
     },
     "time_button_10": {
+        "name": "examplee",
         "status": false,
         "seconds": 10,
-        "name": "examplee"
+        "f_seconds": 0
     },
     "time_button_11": {
+        "name": "examplee",
         "status": false,
         "seconds": 10,
-        "name": "examplee"
+        "f_seconds": 0
     },
-    "button_count": 5
+    "button_count": 4
 }

@@ -1,53 +1,63 @@
 {
     "time_button_2": {
         "name": "code",
-        "status": true,
-        "seconds": 14518
+        "status": false,
+        "seconds": 41125,
+        "f_seconds": "11h"
     },
     "time_button_3": {
-        "name": "Timer 3",
+        "name": "Tisff",
         "status": false,
-        "seconds": 3
+        "seconds": 8,
+        "f_seconds": "0.1m"
     },
     "time_button_4": {
         "name": "Timer 4",
         "status": false,
-        "seconds": 3
+        "seconds": 2,
+        "f_seconds": "0.0m"
     },
     "time_button_5": {
         "name": "Timer 5",
         "status": false,
-        "seconds": 6
+        "seconds": 14,
+        "f_seconds": "0.2m"
     },
     "time_button_6": {
         "name": "Timer 6",
         "status": false,
-        "seconds": 3
+        "seconds": 7,
+        "f_seconds": "0.1m"
     },
     "time_button_7": {
         "name": "Timer 7",
         "status": false,
-        "seconds": 3
+        "seconds": 7,
+        "f_seconds": "0.1m"
     },
     "time_button_8": {
         "name": "Timer 8",
         "status": false,
-        "seconds": 3
+        "seconds": 7,
+        "f_seconds": "0.1m"
     },
     "time_button_9": {
         "name": "Timer 9",
         "status": false,
-        "seconds": 3
+        "seconds": 7,
+        "f_seconds": "0.1m"
     },
     "time_button_10": {
         "name": "Timer 10",
         "status": false,
-        "seconds": 3
+        "seconds": 7,
+        "f_seconds": "0.1m"
     },
     "time_button_11": {
         "name": "Timer 11",
         "status": false,
-        "seconds": 3
+        "seconds": 7,
+        "f_seconds": "0.1m"
     },
-    "button_count": 4
+    "button_count": 3
 }
