@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1038</width>
-    <height>892</height>
+    <width>1000</width>
+    <height>889</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -28,7 +28,7 @@
      <rect>
       <x>10</x>
       <y>1</y>
-      <width>651</width>
+      <width>1000</width>
       <height>591</height>
      </rect>
     </property>
@@ -114,9 +114,9 @@ font-size: 40px</string>
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>1</y>
+       <y>0</y>
        <width>10</width>
-       <height>580</height>
+       <height>620</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -202,7 +202,7 @@ color: #c6d0f5;</string>
      <property name="geometry">
       <rect>
        <x>-5</x>
-       <y>530</y>
+       <y>546</y>
        <width>220</width>
        <height>3</height>
       </rect>
@@ -214,10 +214,10 @@ color: #c6d0f5;</string>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>-2</x>
        <y>10</y>
-       <width>211</width>
-       <height>503</height>
+       <width>219</width>
+       <height>603</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,5">
@@ -235,7 +235,7 @@ color: #c6d0f5;</string>
         <item>
          <widget class="QLabel" name="statusOn_1">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -248,10 +248,13 @@ color: #c6d0f5;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;</string>
+background-color: #232634;
+font-size: 10px;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>⏸️</string>
+           <string> ⬤</string>
           </property>
          </widget>
         </item>
@@ -260,7 +263,7 @@ background-color: #232634;</string>
           <property name="minimumSize">
            <size>
             <width>161</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -277,15 +280,15 @@ border-radius: 0%;</string>
         <item>
          <widget class="QLabel" name="timeLabel_2">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>31</verstretch>
            </sizepolicy>
           </property>
           <property name="minimumSize">
            <size>
-            <width>0</width>
-            <height>31</height>
+            <width>40</width>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -298,7 +301,7 @@ background-color: #232634;
 </string>
           </property>
           <property name="text">
-           <string>00</string>
+           <string> 00  </string>
           </property>
          </widget>
         </item>
@@ -312,7 +315,7 @@ background-color: #232634;
         <item>
          <widget class="QLabel" name="statusOn_2">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -325,19 +328,28 @@ background-color: #232634;
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;</string>
+background-color: #232634;
+font-size: 10px;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>⏸️</string>
+           <string> ⬤</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="habit_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
-            <width>161</width>
-            <height>31</height>
+            <width>143</width>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -354,7 +366,7 @@ border-radius: 0%;</string>
         <item>
          <widget class="QLabel" name="timeLabel_3">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>31</verstretch>
            </sizepolicy>
@@ -362,7 +374,7 @@ border-radius: 0%;</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -389,7 +401,7 @@ background-color: #232634;
         <item>
          <widget class="QLabel" name="statusOn_3">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -402,10 +414,13 @@ background-color: #232634;
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;</string>
+background-color: #232634;
+font-size: 10px;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>⏸️</string>
+           <string> ⬤</string>
           </property>
          </widget>
         </item>
@@ -414,7 +429,7 @@ background-color: #232634;</string>
           <property name="minimumSize">
            <size>
             <width>161</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -431,7 +446,7 @@ border-radius: 0%;</string>
         <item>
          <widget class="QLabel" name="timeLabel_4">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>31</verstretch>
            </sizepolicy>
@@ -439,7 +454,7 @@ border-radius: 0%;</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -466,7 +481,7 @@ border-bottom-right-radius: 5%;</string>
         <item>
          <widget class="QLabel" name="statusOn_4">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -479,10 +494,13 @@ border-bottom-right-radius: 5%;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;</string>
+background-color: #232634;
+font-size: 10px;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>⏸️</string>
+           <string> ⬤</string>
           </property>
          </widget>
         </item>
@@ -491,7 +509,7 @@ background-color: #232634;</string>
           <property name="minimumSize">
            <size>
             <width>161</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -508,7 +526,7 @@ border-radius: 0%;</string>
         <item>
          <widget class="QLabel" name="timeLabel_5">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>31</verstretch>
            </sizepolicy>
@@ -516,7 +534,7 @@ border-radius: 0%;</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -543,7 +561,7 @@ background-color: #232634;
         <item>
          <widget class="QLabel" name="statusOn_5">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -556,10 +574,13 @@ background-color: #232634;
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;</string>
+background-color: #232634;
+font-size: 10px;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>⏸️</string>
+           <string> ⬤</string>
           </property>
          </widget>
         </item>
@@ -568,7 +589,7 @@ background-color: #232634;</string>
           <property name="minimumSize">
            <size>
             <width>161</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -585,7 +606,7 @@ border-radius: 0%;</string>
         <item>
          <widget class="QLabel" name="timeLabel_6">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>31</verstretch>
            </sizepolicy>
@@ -593,7 +614,7 @@ border-radius: 0%;</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -620,7 +641,7 @@ background-color: #232634;
         <item>
          <widget class="QLabel" name="statusOn_6">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -633,10 +654,13 @@ background-color: #232634;
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;</string>
+background-color: #232634;
+font-size: 10px;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>⏸️</string>
+           <string>   ⬤</string>
           </property>
          </widget>
         </item>
@@ -645,7 +669,7 @@ background-color: #232634;</string>
           <property name="minimumSize">
            <size>
             <width>161</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -662,7 +686,7 @@ border-radius: 0%;</string>
         <item>
          <widget class="QLabel" name="timeLabel_7">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>31</verstretch>
            </sizepolicy>
@@ -670,7 +694,7 @@ border-radius: 0%;</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -697,7 +721,7 @@ background-color: #232634;
         <item>
          <widget class="QLabel" name="statusOn_7">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -710,10 +734,13 @@ background-color: #232634;
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;</string>
+background-color: #232634;
+font-size: 10px;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>⏸️</string>
+           <string>   ⬤</string>
           </property>
          </widget>
         </item>
@@ -722,7 +749,7 @@ background-color: #232634;</string>
           <property name="minimumSize">
            <size>
             <width>161</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -739,7 +766,7 @@ border-radius: 0%;</string>
         <item>
          <widget class="QLabel" name="timeLabel_8">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>31</verstretch>
            </sizepolicy>
@@ -747,7 +774,7 @@ border-radius: 0%;</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -774,7 +801,7 @@ background-color: #232634;
         <item>
          <widget class="QLabel" name="statusOn_8">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -787,10 +814,13 @@ background-color: #232634;
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;</string>
+background-color: #232634;
+font-size: 10px;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>⏸️</string>
+           <string>   ⬤</string>
           </property>
          </widget>
         </item>
@@ -799,7 +829,7 @@ background-color: #232634;</string>
           <property name="minimumSize">
            <size>
             <width>161</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -816,7 +846,7 @@ border-radius: 0%;</string>
         <item>
          <widget class="QLabel" name="timeLabel_9">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>31</verstretch>
            </sizepolicy>
@@ -824,7 +854,7 @@ border-radius: 0%;</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -851,7 +881,7 @@ background-color: #232634;
         <item>
          <widget class="QLabel" name="statusOn_9">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -864,10 +894,13 @@ background-color: #232634;
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;</string>
+background-color: #232634;
+font-size: 10px;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>⏸️</string>
+           <string>   ⬤</string>
           </property>
          </widget>
         </item>
@@ -876,7 +909,7 @@ background-color: #232634;</string>
           <property name="minimumSize">
            <size>
             <width>161</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -893,7 +926,7 @@ border-radius: 0%;</string>
         <item>
          <widget class="QLabel" name="timeLabel_10">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>31</verstretch>
            </sizepolicy>
@@ -901,7 +934,7 @@ border-radius: 0%;</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -928,7 +961,7 @@ background-color: #232634;
         <item>
          <widget class="QLabel" name="statusOn_10">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -941,10 +974,13 @@ background-color: #232634;
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;</string>
+background-color: #232634;
+font-size: 10px;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>⏸️</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;⬤&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -953,7 +989,7 @@ background-color: #232634;</string>
           <property name="minimumSize">
            <size>
             <width>161</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -970,7 +1006,7 @@ border-radius: 0%;</string>
         <item>
          <widget class="QLabel" name="timeLabel_11">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>31</verstretch>
            </sizepolicy>
@@ -978,7 +1014,7 @@ border-radius: 0%;</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>31</height>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -1004,7 +1040,7 @@ background-color: #232634;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>540</y>
+      <y>557</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -1056,7 +1092,7 @@ background-color: #232634;
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>740</y>
+      <y>710</y>
       <width>197</width>
       <height>34</height>
      </rect>
