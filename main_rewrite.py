@@ -199,6 +199,8 @@ class MainWindow(QMainWindow):
         elif  self.startButtonStatus == False:
             self.start_butt.setText('Start')
 
+   
+                
     def value_changer(self):
         if self.startButtonStatus == True:
             for number in range(2, 12):
@@ -228,6 +230,7 @@ class MainWindow(QMainWindow):
         for number in range(2, 12):            
             button_key = f'time_button_{number}'
             button_key = getattr(self, button_key, None)
+
             button_key['status'] = True
             self.zapuskator()
             button_key['status'] = False     
@@ -242,8 +245,6 @@ class MainWindow(QMainWindow):
         for number in range(2, 12):
             button_key = f'time_button_{number}'
             button_key = getattr(self, button_key, None)
-            
-
             if button_key['status'] == True:
                 button_key['seconds'] += 1
                 self.time_formattor(button_key)
@@ -262,7 +263,8 @@ class MainWindow(QMainWindow):
         elif seconds <= 3600:
             decimal_hours = seconds / 3600
             
-            small_formatted_time = f'{decimal_hours:1f}h'
+            small_formatted_time = f'{decimal_hours:.1f}h'
+            
 
         elif seconds >= 3600:
             hours = seconds // 3600
@@ -370,12 +372,24 @@ class MainWindow(QMainWindow):
         
         
         for number in range(2, 12):
+            
             choose = f'habit_{number}'
             
             if self.choose == choose:
+                time_button = f'time_button_{number}'
+                time_button = getattr(self, time_button, None)
                 choice_butt = number
+                
                 self.get_value(choice_butt)
                 self.choose_indicator(choice, number)
+                if time_button['status'] == True:
+                    self.startButtonStatus = False
+                    self.startORstop()
+                if time_button['status'] == False:
+                    self.startButtonStatus = True
+                    self.startORstop()
+        print('_____________')
+        
                 
                 
     def choose_indicator(self, choice, number):
@@ -389,9 +403,18 @@ class MainWindow(QMainWindow):
         if hasattr(self, 'previous_statusOn') and self.previous_statusOn:
             self.previous_statusOn.setStyleSheet('''background-color: #232634; 
             color: #a5adce;
+            
+            background-color: #232634;
+            border-top-left-radius: 5%;
+            border-bottom-left-radius: 5%; ''')  
+
+        if hasattr(self, 'previous_label') and self.previous_label:
+            self.previous_label.setStyleSheet('''background-color: #232634; 
+            color: #a5adce;
             font-family: Liberation Mono;
             background-color: #232634;
-            border-radius: 0%; ''')  
+            border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%;''')  
         
         choice.setStyleSheet('''background-color: #232634; 
             color: #a5adce;
@@ -399,31 +422,28 @@ class MainWindow(QMainWindow):
             background-color: #181926;
             border-radius: 0%; ''')  
         statusOnTxt = f'statusOn_{number - 1}'
-        print(statusOnTxt)
+        
         chooseTxt = f'habit_{number}'
-        print(statusOnTxt)
+        
         statusOn = getattr(self, statusOnTxt)
+
+        timeLabel = f'timeLabel_{number}'
+        timeLabel = getattr(self, timeLabel)
+
+        timeLabel.setStyleSheet('''background-color: #232634; 
+            color: #a5adce;
+            font-family: Liberation Mono;
+            background-color: #181926;
+            border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%; ''')  
 
         statusOn.setStyleSheet('''background-color: #232634; 
             color: #a5adce;
             font-family: Liberation Mono;
             background-color: #181926;
-            border-radius: 0%; ''')  
-        # statusOnTxt = f'statusOn_{number - 1}'
-        # print(statusOnTxt)
-        # chooseTxt = f'habit_{number}'
-        # print(statusOnTxt)
-        # statusOn = getattr(self, statusOnTxt, None)
-        # print(self.choose)
-        
-        # if self.choose == chooseTxt:
-        #     print('babadzaki')
-        #     statusOn.setStyleSheet('''background-color: #232634; 
-        #     color: #a5adce;
-        #     font-family: Liberation Mono;
-        #     background-color: #181926;
-        #     border-radius: 0%; ''') 
-        
+            border-top-left-radius: 5%;
+            border-bottom-left-radius: 5%; ''')  
+        self.previous_label = timeLabel
         self.previous_choice = choice  
         self.previous_statusOn = statusOn
         

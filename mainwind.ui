@@ -113,7 +113,7 @@ font-size: 40px</string>
     <widget class="Line" name="line_2">
      <property name="geometry">
       <rect>
-       <x>210</x>
+       <x>213</x>
        <y>0</y>
        <width>10</width>
        <height>620</height>
@@ -201,7 +201,7 @@ color: #c6d0f5;</string>
     <widget class="Line" name="line_3">
      <property name="geometry">
       <rect>
-       <x>-5</x>
+       <x>0</x>
        <y>546</y>
        <width>220</width>
        <height>3</height>
@@ -216,8 +216,8 @@ color: #c6d0f5;</string>
       <rect>
        <x>-2</x>
        <y>10</y>
-       <width>219</width>
-       <height>603</height>
+       <width>211</width>
+       <height>521</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,5">
@@ -260,9 +260,15 @@ border-bottom-left-radius: 5%;</string>
         </item>
         <item>
          <widget class="QPushButton" name="habit_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
-            <width>161</width>
+            <width>143</width>
             <height>36</height>
            </size>
           </property>
@@ -287,7 +293,7 @@ border-radius: 0%;</string>
           </property>
           <property name="minimumSize">
            <size>
-            <width>40</width>
+            <width>0</width>
             <height>36</height>
            </size>
           </property>
@@ -426,9 +432,15 @@ border-bottom-left-radius: 5%;</string>
         </item>
         <item>
          <widget class="QPushButton" name="habit_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
-            <width>161</width>
+            <width>141</width>
             <height>36</height>
            </size>
           </property>
@@ -506,9 +518,15 @@ border-bottom-left-radius: 5%;</string>
         </item>
         <item>
          <widget class="QPushButton" name="habit_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
-            <width>161</width>
+            <width>141</width>
             <height>36</height>
            </size>
           </property>
@@ -586,9 +604,15 @@ border-bottom-left-radius: 5%;</string>
         </item>
         <item>
          <widget class="QPushButton" name="habit_6">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
-            <width>161</width>
+            <width>141</width>
             <height>36</height>
            </size>
           </property>
@@ -660,15 +684,21 @@ border-top-left-radius: 5%;
 border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>   ⬤</string>
+           <string> ⬤</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="habit_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
-            <width>161</width>
+            <width>141</width>
             <height>36</height>
            </size>
           </property>
@@ -740,15 +770,21 @@ border-top-left-radius: 5%;
 border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>   ⬤</string>
+           <string> ⬤</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="habit_8">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
-            <width>161</width>
+            <width>141</width>
             <height>36</height>
            </size>
           </property>
@@ -820,15 +856,21 @@ border-top-left-radius: 5%;
 border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>   ⬤</string>
+           <string> ⬤</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="habit_9">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
-            <width>161</width>
+            <width>141</width>
             <height>36</height>
            </size>
           </property>
@@ -900,15 +942,21 @@ border-top-left-radius: 5%;
 border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>   ⬤</string>
+           <string> ⬤</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="habit_10">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
-            <width>161</width>
+            <width>141</width>
             <height>36</height>
            </size>
           </property>
@@ -980,15 +1028,21 @@ border-top-left-radius: 5%;
 border-bottom-left-radius: 5%;</string>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;⬤&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string> ⬤</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="habit_11">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
-            <width>161</width>
+            <width>141</width>
             <height>36</height>
            </size>
           </property>
