@@ -1,12 +1,10 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QDialog, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QDialog, QMessageBox, QMenu, QAction
+from PyQt5.QtCore import QTimer, Qt, QEvent
 from PyQt5 import uic
-from PyQt5.QtCore import QTimer
-import time
-from PyQt5.QtWidgets import QMenu, QAction
-from PyQt5.QtCore import Qt
-from PyQt5.QtCore import Qt, QEvent
+
 import json
+import time
+import sys
 
 
 class MainWindow(QMainWindow):
@@ -17,18 +15,11 @@ class MainWindow(QMainWindow):
 ########################################################################################*
         
        
-#* Хня якась
-        self.setFixedSize(674, 584)
+#* маячня якась
+        self.setFixedSize(674, 600)
         self.move(700, 80)
         self.widget = QWidget()
         self.scrollLayout = QVBoxLayout(self.widget)
-            
-
-#
-        
-
-        
-        
 #* ховаємо кнопки(геній) 
         
         self.buttons = [
@@ -58,11 +49,11 @@ class MainWindow(QMainWindow):
         self.timer = QTimer(self)
         self.auto_save = QTimer(self)
         self.elapsed_time = 0
-        self.start_butt.setCheckable(True)
+        self.start_butt.setCheckable(False)
         self.current_button = None
         self.choice_butt = 0
         self.small_formatted_time = f'{00:2d}s'
-        
+        self.startButtonStatus = False
         self.butt_num = self.habit_2
 #! таймерасти0
         self.time_button_2 = {'status': False, 'seconds': 0, 'f_seconds': 0, 'name': 'Timer 2',}
@@ -89,16 +80,18 @@ class MainWindow(QMainWindow):
             'time_button_11': self.time_button_11,
             'time_button_12': self.time_button_12,
            
-        }        
+        }     
+        self.start_butt.clicked.connect(self.startORstop)   
         self.pushButton.clicked.connect(self.open_addGameWidget)
         self.pushButton.clicked.connect(self.counter)
         self.start_butt.clicked.connect(self.start_timer)
+        
         self.start_butt.clicked.connect(self.value_changer)
         self.time_butt_2.clicked.connect(self.open_addTimeWidget)
         self.timer.timeout.connect(self.zapuskator)
         self.timer.timeout.connect(self.timer_sync)
         self.auto_save.timeout.connect(self.save_data)  
-        for number in range(2, 11):
+        for number in range(2, 12):
             habit_key = f'habit_{number}'
             habit_key = getattr(self, habit_key, None)
             habit_key.clicked.connect(self.chose_activity)
@@ -108,15 +101,14 @@ class MainWindow(QMainWindow):
         self.small_timers()
         self.saver_timer()
         self.value_on_start_updator()
-        
-        
+        self.timer_sync()
+        self.start_timer()
+          
 ##? Контекстне меню
-        for number in range(2, 11):
+        for number in range(2, 12):
             habit_key = f'habit_{number}'
             habit_key = getattr(self, habit_key, None)
             habit_key.installEventFilter(self)
-        
-        
 
     def eventFilter(self, obj, event):       
         if event.type() == QEvent.MouseButtonPress:          
@@ -143,29 +135,21 @@ class MainWindow(QMainWindow):
         self.edit_window.hide()
     def delete_game(self, button):
         self.whazis.hide()
-        self.button_count -= 1
-        
+        self.button_count = self.button_count - 1
+        print(self.button_count)
         self.edit_window.hide()
         
-        
-        for number in range(2, 12):
-           
+        for number in range(2, 12):     
             if self.text_whozis == f'self.habit_{number}':
                 timeLabel = f'timeLabel_{number}'        
                 timeLabel = getattr(self, timeLabel, None)
                 timeLabel.hide()
-
                 statusOn = f'statusOn_{number - 1}'
-                
-                statusOn = getattr(self, statusOn, None)
-                
-                statusOn.hide()
 
-                time_button = f'time_button_{number}'
-                
-                time_button = getattr(self, time_button, None)
-                
-                               
+                statusOn = getattr(self, statusOn, None)
+                statusOn.hide()
+                time_button = f'time_button_{number}'            
+                time_button = getattr(self, time_button, None)                
                 time_button['status'] = False
                 time_button['seconds'] = 0
                 self.timer_sync()
@@ -186,11 +170,7 @@ class MainWindow(QMainWindow):
             for number in range(2, 12):
                 if self.text_whozis == f'self.habit_{number}':
                     time_button = f'time_button_{number}'
-                    
                     time_button = getattr(self, time_button, None)
-                    
-
-
                     time_button['seconds'] = int(self.edit_window.lineEdit.text())
                     self.new_window.hide()
                     self.timer_sync()
@@ -212,36 +192,64 @@ class MainWindow(QMainWindow):
     def saver_timer(self):
         self.auto_save.start(10000)    
 
+    def startORstop(self):
+        self.startButtonStatus = not self.startButtonStatus 
+        if  self.startButtonStatus == True:
+            self.start_butt.setText('Stop')
+        elif  self.startButtonStatus == False:
+            self.start_butt.setText('Start')
+
+   
+                
     def value_changer(self):
-        if self.start_butt.isChecked():
+        if self.startButtonStatus == True:
             for number in range(2, 12):
                 if self.choose == f'habit_{number}':
                     button_key = f'time_button_{number}'
                     button_key = getattr(self, button_key, None)
-                    button_key['status'] = not button_key['status']                   
-                    self.timer_sync()          
+                    button_key['status'] = True     
+
+                    statusOn_key = f'statusOn_{number - 1}'
+                    statusOn_key = getattr(self, statusOn_key, None)
+                    statusOn_key.show()
+                    self.timer_sync()      
+             
+
+        elif self.startButtonStatus == False:
+            for number in range(2, 12):
+                if self.choose == f'habit_{number}':
+                    button_key = f'time_button_{number}'
+                    button_key = getattr(self, button_key, None)
+                    button_key['status'] = False          
+                    statusOn_key = f'statusOn_{number - 1}'
+                    statusOn_key = getattr(self, statusOn_key, None)
+                    statusOn_key.hide()     
+                    self.timer_sync()      
 
     def value_on_start_updator(self):
         for number in range(2, 12):            
             button_key = f'time_button_{number}'
             button_key = getattr(self, button_key, None)
+
             button_key['status'] = True
             self.zapuskator()
             button_key['status'] = False     
 
 ##? замiна маячнi   
-    def get_value(self, number):
-            
+    def get_value(self, number):  
             timer_key = f"time_button_{number}"
             selected_timer = self.time_buttons.get(timer_key)
-            print (f'get_value: {selected_timer['status']}')
+            
     def zapuskator(self):
+        
         for number in range(2, 12):
             button_key = f'time_button_{number}'
             button_key = getattr(self, button_key, None)
             if button_key['status'] == True:
                 button_key['seconds'] += 1
                 self.time_formattor(button_key)
+                
+              
 
     def time_formattor(self, button):
         seconds = button['seconds']
@@ -255,7 +263,8 @@ class MainWindow(QMainWindow):
         elif seconds <= 3600:
             decimal_hours = seconds / 3600
             
-            small_formatted_time = f'{decimal_hours:1f}h'
+            small_formatted_time = f'{decimal_hours:.1f}h'
+            
 
         elif seconds >= 3600:
             hours = seconds // 3600
@@ -265,7 +274,7 @@ class MainWindow(QMainWindow):
         self.small_timers()
 
     def small_timers(self):
-        for number in range(2, 13):
+        for number in range(2, 12):
             timer_key = f'timeLabel_{number}'
             button_key = f'time_button_{number}'
             
@@ -288,7 +297,7 @@ class MainWindow(QMainWindow):
        
         if whois.text() == 'Save':
                
-            for number in range(2, 13):
+            for number in range(2, 12):
                 if self.choose == f'habit_{number}':
                     time_button = f'time_button_{number}'
                     time_button = getattr(self, time_button, None)
@@ -300,13 +309,10 @@ class MainWindow(QMainWindow):
             self.new_window.hide()
         else: 
             pass
-             
 
-#
     def activityEdit():
         self.new_window = QDialog()
         uic.loadUi('ActivityEdit.ui', self.new_window)
-        
         self.new_window.show()
 #? кнопка ігор додавання
     def open_addGameWidget(self):
@@ -319,12 +325,8 @@ class MainWindow(QMainWindow):
         self.new_window.show()
         self.crnt_butt_name = self.new_window.gameName.text()
         return self.crnt_butt_name
-
-
-    def add_game(self):
-       
+    def add_game(self):     
         game_name = self.new_window.gameName.text()
-        
         for number in range(2, 12):
             if self.button_count == number:
                 habit = f'habit_{number}'
@@ -339,14 +341,13 @@ class MainWindow(QMainWindow):
                 label.show()
                 habit.setText(game_name)
                 time_button['name'] = habit.text()
-                print('fkfkf')
+                
                 self.timer_sync()
         if self.button_count >= 12:
             QMessageBox.critical(self, 'fck its error///', 'You reached maximum', QMessageBox.Ok)
-#46305
+
         self.new_window.hide()
     def load_game(self):
-       
         for number in range(2, 12):
             if self.button_count >= number:
                 habit = f'habit_{number}'
@@ -361,14 +362,7 @@ class MainWindow(QMainWindow):
                 label.show()
                 print (time_button)
                 habit.setText(time_button['name'])
-            
-        # if self.button_count >= 3:
-        #     self.habit_3.show()
-        #     self.timeLabel_3.show()
-        #     self.habit_3.setText(self.time_button_3['name'])
-            
-       
-    
+                    
 #? ну собсно вибирання звички
     def chose_activity(self):
         self.chosedActivity = self.sender()
@@ -376,34 +370,85 @@ class MainWindow(QMainWindow):
         self.choose = self.chosedActivity.objectName()
         choice = self.chosedActivity 
         
-        self.choose_indicator(choice)
-       
-
-
-        for number in range(2, 11):
+        
+        for number in range(2, 12):
+            
             choose = f'habit_{number}'
             
             if self.choose == choose:
+                time_button = f'time_button_{number}'
+                time_button = getattr(self, time_button, None)
                 choice_butt = number
+                
                 self.get_value(choice_butt)
-    def choose_indicator(self,choice):
+                self.choose_indicator(choice, number)
+                if time_button['status'] == True:
+                    self.startButtonStatus = False
+                    self.startORstop()
+                if time_button['status'] == False:
+                    self.startButtonStatus = True
+                    self.startORstop()
+        print('_____________')
+        
+                
+                
+    def choose_indicator(self, choice, number):
         if hasattr(self, 'previous_choice') and self.previous_choice:
             self.previous_choice.setStyleSheet('''background-color: #232634; 
             color: #a5adce;
             font-family: Liberation Mono;
             background-color: #232634;
-            border-radius: 0%; ''')  # Reset previous button style
+            border-radius: 0%; ''')  
+        
+        if hasattr(self, 'previous_statusOn') and self.previous_statusOn:
+            self.previous_statusOn.setStyleSheet('''background-color: #232634; 
+            color: #a5adce;
+            
+            background-color: #232634;
+            border-top-left-radius: 5%;
+            border-bottom-left-radius: 5%; ''')  
+
+        if hasattr(self, 'previous_label') and self.previous_label:
+            self.previous_label.setStyleSheet('''background-color: #232634; 
+            color: #a5adce;
+            font-family: Liberation Mono;
+            background-color: #232634;
+            border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%;''')  
         
         choice.setStyleSheet('''background-color: #232634; 
             color: #a5adce;
             font-family: Liberation Mono;
             background-color: #181926;
             border-radius: 0%; ''')  
-        self.previous_choice = choice  # Store the current choice as previous
+        statusOnTxt = f'statusOn_{number - 1}'
         
+        chooseTxt = f'habit_{number}'
+        
+        statusOn = getattr(self, statusOnTxt)
+
+        timeLabel = f'timeLabel_{number}'
+        timeLabel = getattr(self, timeLabel)
+
+        timeLabel.setStyleSheet('''background-color: #232634; 
+            color: #a5adce;
+            font-family: Liberation Mono;
+            background-color: #181926;
+            border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%; ''')  
+
+        statusOn.setStyleSheet('''background-color: #232634; 
+            color: #a5adce;
+            font-family: Liberation Mono;
+            background-color: #181926;
+            border-top-left-radius: 5%;
+            border-bottom-left-radius: 5%; ''')  
+        self.previous_label = timeLabel
+        self.previous_choice = choice  
+        self.previous_statusOn = statusOn
         
     def timer_sync(self):
-        for number in range(2, 11):
+        for number in range(2, 12):
             if self.choose == f'habit_{number}':
                 time_button = f'time_button_{number}'
                 time_button = getattr(self, time_button, None) 
@@ -411,12 +456,11 @@ class MainWindow(QMainWindow):
                 minutes = (time_button['seconds'] % 3600) // 60
                 seconds = time_button['seconds'] % 60
                 
-                formatted_time = f'{hours:02d}:{minutes:02d}:{seconds:02d}'
+                formatted_time = f'  {hours:02d}:{minutes:02d}:{seconds:02d}'
                 self.timeLabel.setText(formatted_time)
-            else:
-                pass
-##! джуйсон
-        # 44970
+                
+            
+##! jsonn
     def save_data(self):
         data = {
             'time_button_2': self.time_button_2,
@@ -434,7 +478,7 @@ class MainWindow(QMainWindow):
         with open('timers_dataa.json', 'w') as file:
             json.dump(data, file, indent=4)
         print('Data saved successfully.')
-        print(self.time_button_2)
+        
     
     def load_data(self):
         try:
@@ -454,10 +498,7 @@ class MainWindow(QMainWindow):
             print('Data loaded successfully.')
         except FileNotFoundError:
             print('No data file found.')
-
-        
-
-        
+     
 #########################################################################################*
 if __name__ == '__main__':
     app = QApplication(sys.argv)
