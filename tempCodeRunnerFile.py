@@ -1,1 +1,0 @@
-previosly_date

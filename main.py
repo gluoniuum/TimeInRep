@@ -10,7 +10,7 @@ import sys
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__() 
-        uic.loadUi('/home/gluon/TimeInRep/mainwind.ui', self)  # Підключення візуалу з дизайнера
+        uic.loadUi('ui_files/mainwind.ui', self)  # Підключення візуалу з дизайнера
         
 ########################################################################################*
         
@@ -132,7 +132,7 @@ class MainWindow(QMainWindow):
 
     def context_menu(self, button):
         self.edit_window = QDialog()
-        uic.loadUi('ActivityEdit.ui', self.edit_window)        
+        uic.loadUi('ui_files/ActivityEdit.ui', self.edit_window)        
         self.edit_window.buttSave.clicked.connect(self.edit_game)
         self.edit_window.deleteButt.clicked.connect(self.delete_game)
         self.edit_window.buttCancel.clicked.connect(self.butt_cancel)          
@@ -294,7 +294,7 @@ class MainWindow(QMainWindow):
 #!    Додавання часу       
     def open_addTimeWidget(self):
         self.new_window = QDialog()
-        uic.loadUi('naoborot.ui', self.new_window)
+        uic.loadUi('ui_files/naoborot.ui', self.new_window)
         self.new_window.cancel_button.clicked.connect(self.buttonsss)
         self.new_window.save_button.clicked.connect(self.buttonsss)
         self.new_window.show()
@@ -319,7 +319,7 @@ class MainWindow(QMainWindow):
 
     def activityEdit():
         self.new_window = QDialog()
-        uic.loadUi('ActivityEdit.ui', self.new_window)
+        uic.loadUi('ui_files/ActivityEdit.ui', self.new_window)
         self.new_window.show()
 #*    .time
     def curent_time(self):
@@ -360,7 +360,7 @@ class MainWindow(QMainWindow):
 #*    Кнопка ігор додавання
     def open_addGameWidget(self):
         self.new_window = QDialog()
-        uic.loadUi('timedialog.ui', self.new_window)
+        uic.loadUi('ui_files/timedialog.ui', self.new_window)
         
         self.new_window.cancel_button.clicked.connect(self.add_game)
         self.new_window.save_button.clicked.connect(self.add_game)

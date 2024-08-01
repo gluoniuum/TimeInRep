@@ -1,8 +1,8 @@
 {
     "time_button_2": {
-        "status": false,
-        "seconds": 89070,
-        "f_seconds": "24h",
+        "status": true,
+        "seconds": 93186,
+        "f_seconds": "25h",
         "name": "code"
     },
     "time_button_3": {
@@ -20,7 +20,7 @@
     "time_button_5": {
         "name": "timeIn > 02.07",
         "status": true,
-        "seconds": 4499,
+        "seconds": 5018,
         "f_seconds": " 1h"
     },
     "time_button_6": {
