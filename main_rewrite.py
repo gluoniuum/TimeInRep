@@ -55,7 +55,8 @@ class MainWindow(QMainWindow):
         self.small_formatted_time = f'{00:2d}s'
         self.startButtonStatus = False
         self.butt_num = self.habit_2
-
+        self.curent_date = 20240802
+        self.previosly_date = 20240801
 
 #?    Таймерасти
         self.time_button_2 = {'status': False, 'seconds': 0, 'f_seconds': 0, 'name': 'Timer 2',}
@@ -93,6 +94,7 @@ class MainWindow(QMainWindow):
         self.timer.timeout.connect(self.zapuskator)
         self.timer.timeout.connect(self.timer_sync)
         self.auto_save.timeout.connect(self.save_data)  
+        self.auto_save.timeout.connect(self.curent_time) 
         
         for number in range(2, 12):
             habit_key = f'habit_{number}'
@@ -322,8 +324,39 @@ class MainWindow(QMainWindow):
 #*    .time
     def curent_time(self):
         self.current_time = time.localtime()
-        time.sleep(10)c
-        print(f'Zaraz: {self.curent_time}')
+        self.date_to_int()
+        
+    
+    def date_to_int(self):
+        current_date = f"{self.current_time.tm_year}{self.current_time.tm_mon:02d}{self.current_time.tm_mday:02d}"
+        print(f'pr: {self.previosly_date}')
+        print(f'cr: {self.curent_date}')
+        
+        if self.curent_date > self.previosly_date:
+            #todo логика для сброс таймера за сегодня и тд
+            self.previosly_date = self.curent_date
+            print(f'pr_2: {self.previosly_date}')
+            print('yay')
+        else:
+            pass
+
+
+    def fake_date(self):
+        self.curent_date = self.curent_date + 1
+        print(f'fk: {self.curent_date}')
+        time.sleep(10)
+        
+
+
+
+
+
+
+
+
+
+
+
 #*    Кнопка ігор додавання
     def open_addGameWidget(self):
         self.new_window = QDialog()

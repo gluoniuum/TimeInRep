@@ -1,2 +1,1 @@
-oad_data()
-        self.
+previosly_date
