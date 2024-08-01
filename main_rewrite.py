@@ -15,12 +15,13 @@ class MainWindow(QMainWindow):
 ########################################################################################*
         
        
-#* маячня якась
+#?    Маячня якась
         self.setFixedSize(674, 600)
         self.move(700, 80)
         self.widget = QWidget()
         self.scrollLayout = QVBoxLayout(self.widget)
-#* ховаємо кнопки(геній) 
+
+#*    Ховаємо кнопки(геній) 
         
         self.buttons = [
             self.habit_2, self.habit_3, self.habit_4,self.habit_5,
@@ -41,9 +42,8 @@ class MainWindow(QMainWindow):
         ]
         for label in self.timeLabels:
             label.hide()
-#
-        
-#* глобалки типа
+      
+#!    Глобалки типа
         self.button_count = 1
         self.buttons = {}    
         self.timer = QTimer(self)
@@ -55,7 +55,10 @@ class MainWindow(QMainWindow):
         self.small_formatted_time = f'{00:2d}s'
         self.startButtonStatus = False
         self.butt_num = self.habit_2
-#! таймерасти0
+        self.curent_date = 20240802
+        self.previosly_date = 20240801
+
+#?    Таймерасти
         self.time_button_2 = {'status': False, 'seconds': 0, 'f_seconds': 0, 'name': 'Timer 2',}
         self.time_button_3 = {'name': 'Timer 3', 'status': False, 'seconds': 0, 'f_seconds': 0}
         self.time_button_4 = {'name': 'Timer 4', 'status': False, 'seconds': 0, 'f_seconds': 0}
@@ -79,7 +82,7 @@ class MainWindow(QMainWindow):
             'time_button_10': self.time_button_10,
             'time_button_11': self.time_button_11,
             'time_button_12': self.time_button_12,
-           
+#*      конекти           
         }     
         self.start_butt.clicked.connect(self.startORstop)   
         self.pushButton.clicked.connect(self.open_addGameWidget)
@@ -91,6 +94,8 @@ class MainWindow(QMainWindow):
         self.timer.timeout.connect(self.zapuskator)
         self.timer.timeout.connect(self.timer_sync)
         self.auto_save.timeout.connect(self.save_data)  
+        self.auto_save.timeout.connect(self.curent_time) 
+        
         for number in range(2, 12):
             habit_key = f'habit_{number}'
             habit_key = getattr(self, habit_key, None)
@@ -103,8 +108,9 @@ class MainWindow(QMainWindow):
         self.value_on_start_updator()
         self.timer_sync()
         self.start_timer()
-          
-##? Контекстне меню
+        self.curent_time()
+
+#*    Контекстне меню
         for number in range(2, 12):
             habit_key = f'habit_{number}'
             habit_key = getattr(self, habit_key, None)
@@ -177,7 +183,7 @@ class MainWindow(QMainWindow):
                     
                 self.new_window.hide()
 
-#?    Кнопарики сайдбари, сотворення і тд                                                                                                                                                             #?
+#!    Кнопарики сайдбари, сотворення і тд                                                                                                                                                             #?
     def counter(self):
         if self.button_count < 12:
             self.button_count += 1
@@ -185,6 +191,7 @@ class MainWindow(QMainWindow):
             return self.button_count
         if self.button_count > 12:
             pass
+
 #?    Секундомір і тд      
     def start_timer(self):
         self.timer.start(1000)  
@@ -235,7 +242,7 @@ class MainWindow(QMainWindow):
             self.zapuskator()
             button_key['status'] = False     
 
-##? замiна маячнi   
+#*   Замiна маячнi   
     def get_value(self, number):  
             timer_key = f"time_button_{number}"
             selected_timer = self.time_buttons.get(timer_key)
@@ -284,7 +291,7 @@ class MainWindow(QMainWindow):
             if button:
                 label.setText(str(button['f_seconds']))
 
-#? Додавання часу       
+#!    Додавання часу       
     def open_addTimeWidget(self):
         self.new_window = QDialog()
         uic.loadUi('naoborot.ui', self.new_window)
@@ -314,7 +321,43 @@ class MainWindow(QMainWindow):
         self.new_window = QDialog()
         uic.loadUi('ActivityEdit.ui', self.new_window)
         self.new_window.show()
-#? кнопка ігор додавання
+#*    .time
+    def curent_time(self):
+        self.current_time = time.localtime()
+        self.date_to_int()
+        
+    
+    def date_to_int(self):
+        current_date = f"{self.current_time.tm_year}{self.current_time.tm_mon:02d}{self.current_time.tm_mday:02d}"
+        print(f'pr: {self.previosly_date}')
+        print(f'cr: {self.curent_date}')
+        
+        if self.curent_date > self.previosly_date:
+            #todo логика для сброс таймера за сегодня и тд
+            self.previosly_date = self.curent_date
+            print(f'pr_2: {self.previosly_date}')
+            print('yay')
+        else:
+            pass
+
+
+    def fake_date(self):
+        self.curent_date = self.curent_date + 1
+        print(f'fk: {self.curent_date}')
+        time.sleep(10)
+        
+
+
+
+
+
+
+
+
+
+
+
+#*    Кнопка ігор додавання
     def open_addGameWidget(self):
         self.new_window = QDialog()
         uic.loadUi('timedialog.ui', self.new_window)
@@ -363,7 +406,7 @@ class MainWindow(QMainWindow):
                 print (time_button)
                 habit.setText(time_button['name'])
                     
-#? ну собсно вибирання звички
+#?    Ну собсно вибирання звички
     def chose_activity(self):
         self.chosedActivity = self.sender()
         
@@ -371,7 +414,7 @@ class MainWindow(QMainWindow):
         choice = self.chosedActivity 
         
         
-        for number in range(2, 12):
+        for number in range(2, 12): 
             
             choose = f'habit_{number}'
             
@@ -459,8 +502,7 @@ class MainWindow(QMainWindow):
                 formatted_time = f'  {hours:02d}:{minutes:02d}:{seconds:02d}'
                 self.timeLabel.setText(formatted_time)
                 
-            
-##! jsonn
+##!   Jsonn
     def save_data(self):
         data = {
             'time_button_2': self.time_button_2,
@@ -499,7 +541,7 @@ class MainWindow(QMainWindow):
         except FileNotFoundError:
             print('No data file found.')
      
-#########################################################################################*
+#########################################################################################* 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main_window = MainWindow()
