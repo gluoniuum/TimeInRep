@@ -3,20 +3,22 @@ from PyQt5.QtCore import QTimer, Qt, QEvent
 from PyQt5 import uic
 
 import json
-import time
+from datetime import datetime
+
 import sys
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__() 
-        uic.loadUi('/home/gluon/TimeInRep/mainwind.ui', self)  # Підключення візуалу з дизайнера
+        uic.loadUi('ui_files/mainwind.ui', self)  # Підключення візуалу з дизайнера
         
 ########################################################################################*
         
        
 #?    Маячня якась
         self.setFixedSize(674, 600)
+        self.resize(674, 600)
         self.move(700, 80)
         self.widget = QWidget()
         self.scrollLayout = QVBoxLayout(self.widget)
@@ -55,21 +57,22 @@ class MainWindow(QMainWindow):
         self.small_formatted_time = f'{00:2d}s'
         self.startButtonStatus = False
         self.butt_num = self.habit_2
-        self.curent_date = 20240802
-        self.previosly_date = 20240801
-
+        self.current_time = datetime.now()
+        self.previosly_date = 0
+        # self.current_date = 20240803
+        
 #?    Таймерасти
-        self.time_button_2 = {'status': False, 'seconds': 0, 'f_seconds': 0, 'name': 'Timer 2',}
-        self.time_button_3 = {'name': 'Timer 3', 'status': False, 'seconds': 0, 'f_seconds': 0}
-        self.time_button_4 = {'name': 'Timer 4', 'status': False, 'seconds': 0, 'f_seconds': 0}
-        self.time_button_5 = {'name': 'Timer 5', 'status': False, 'seconds': 0, 'f_seconds': 0}
-        self.time_button_6 = {'name': 'Timer 6', 'status': False, 'seconds': 0, 'f_seconds': 0}
-        self.time_button_7 = {'name': 'Timer 7', 'status': False, 'seconds': 0, 'f_seconds': 0}
-        self.time_button_8 = {'name': 'Timer 8', 'status': False, 'seconds': 0, 'f_seconds': 0}
-        self.time_button_9 = {'name': 'Timer 9', 'status': False, 'seconds': 0, 'f_seconds': 0}
-        self.time_button_10 = {'name': 'Timer 10', 'status': False, 'seconds': 0, 'f_seconds': 0}
-        self.time_button_11 = {'name': 'Timer 11', 'status': False, 'seconds': 0, 'f_seconds': 0}
-        self.time_button_12 = {'name': 'Timer 12', 'status': False, 'seconds': 0, 'f_seconds': 0}
+        self.time_button_2 = {'status': False, 'seconds': 0, 'f_seconds': 0, 'name': 'Timer 2', 'today_time':0,'t_seconds':0 }
+        self.time_button_3 = {'name': 'Timer 3', 'status': False, 'seconds': 0, 'f_seconds': 0, 'today_time':0,'t_seconds':0 }
+        self.time_button_4 = {'name': 'Timer 4', 'status': False, 'seconds': 0, 'f_seconds': 0, 'today_time':0,'t_seconds':0 }
+        self.time_button_5 = {'name': 'Timer 5', 'status': False, 'seconds': 0, 'f_seconds': 0, 'today_time':0,'t_seconds':0 }
+        self.time_button_6 = {'name': 'Timer 6', 'status': False, 'seconds': 0, 'f_seconds': 0, 'today_time':0,'t_seconds':0 }
+        self.time_button_7 = {'name': 'Timer 7', 'status': False, 'seconds': 0, 'f_seconds': 0, 'today_time':0,'t_seconds':0 }
+        self.time_button_8 = {'name': 'Timer 8', 'status': False, 'seconds': 0, 'f_seconds': 0, 'today_time':0,'t_seconds':0 }
+        self.time_button_9 = {'name': 'Timer 9', 'status': False, 'seconds': 0, 'f_seconds': 0, 'today_time':0,'t_seconds':0 }
+        self.time_button_10 = {'name': 'Timer 10', 'status': False, 'seconds': 0, 'f_seconds': 0, 'today_time':0,'t_seconds':0 }
+        self.time_button_11 = {'name': 'Timer 11', 'status': False, 'seconds': 0, 'f_seconds': 0, 'today_time':0,'t_seconds':0 }
+        self.time_button_12 = {'name': 'Timer 12', 'status': False, 'seconds': 0, 'f_seconds': 0, 'today_time':0,'t_seconds':0 }
         self.time_buttons = {
             'time_button_2': self.time_button_2,
             'time_button_3': self.time_button_3,
@@ -82,7 +85,8 @@ class MainWindow(QMainWindow):
             'time_button_10': self.time_button_10,
             'time_button_11': self.time_button_11,
             'time_button_12': self.time_button_12,
-#*      конекти           
+
+#*    Kонекти           
         }     
         self.start_butt.clicked.connect(self.startORstop)   
         self.pushButton.clicked.connect(self.open_addGameWidget)
@@ -95,22 +99,24 @@ class MainWindow(QMainWindow):
         self.timer.timeout.connect(self.timer_sync)
         self.auto_save.timeout.connect(self.save_data)  
         self.auto_save.timeout.connect(self.curent_time) 
-        
+        self.dev_butt.clicked.connect(self.dev_button)
         for number in range(2, 12):
             habit_key = f'habit_{number}'
             habit_key = getattr(self, habit_key, None)
             habit_key.clicked.connect(self.chose_activity)
+   
         self.choose = 'habit_'
         self.load_data()
         self.load_game()
+        
         self.small_timers()
         self.saver_timer()
         self.value_on_start_updator()
+       
         self.timer_sync()
         self.start_timer()
-        self.curent_time()
 
-#*    Контекстне меню
+#?    Контекстне меню
         for number in range(2, 12):
             habit_key = f'habit_{number}'
             habit_key = getattr(self, habit_key, None)
@@ -132,7 +138,7 @@ class MainWindow(QMainWindow):
 
     def context_menu(self, button):
         self.edit_window = QDialog()
-        uic.loadUi('ActivityEdit.ui', self.edit_window)        
+        uic.loadUi('ui_files/ActivityEdit.ui', self.edit_window)        
         self.edit_window.buttSave.clicked.connect(self.edit_game)
         self.edit_window.deleteButt.clicked.connect(self.delete_game)
         self.edit_window.buttCancel.clicked.connect(self.butt_cancel)          
@@ -205,9 +211,7 @@ class MainWindow(QMainWindow):
             self.start_butt.setText('Stop')
         elif  self.startButtonStatus == False:
             self.start_butt.setText('Start')
-
-   
-                
+          
     def value_changer(self):
         if self.startButtonStatus == True:
             for number in range(2, 12):
@@ -242,11 +246,20 @@ class MainWindow(QMainWindow):
             self.zapuskator()
             button_key['status'] = False     
 
-#*   Замiна маячнi   
+#*    Замiна маячнi   
     def get_value(self, number):  
             timer_key = f"time_button_{number}"
             selected_timer = self.time_buttons.get(timer_key)
-            
+    
+    def dev_button(self):
+        print('_______')
+        print('yayy')
+        print(self.time_button_6)
+    
+        print(f'pr: {self.previosly_date}')
+        print(f'cr: {self.current_date}')
+        print('_______')
+        
     def zapuskator(self):
         
         for number in range(2, 12):
@@ -254,13 +267,12 @@ class MainWindow(QMainWindow):
             button_key = getattr(self, button_key, None)
             if button_key['status'] == True:
                 button_key['seconds'] += 1
+                button_key['t_seconds'] += 1
                 self.time_formattor(button_key)
-                
-              
-
+                self.date_to_int()
+                self.curent_time()
     def time_formattor(self, button):
         seconds = button['seconds']
-        
         if seconds <= 60:
             decimal_minutes = seconds / 60
             small_formatted_time = f'{decimal_minutes:.1f}m'
@@ -294,7 +306,7 @@ class MainWindow(QMainWindow):
 #!    Додавання часу       
     def open_addTimeWidget(self):
         self.new_window = QDialog()
-        uic.loadUi('naoborot.ui', self.new_window)
+        uic.loadUi('ui_files/naoborot.ui', self.new_window)
         self.new_window.cancel_button.clicked.connect(self.buttonsss)
         self.new_window.save_button.clicked.connect(self.buttonsss)
         self.new_window.show()
@@ -319,48 +331,39 @@ class MainWindow(QMainWindow):
 
     def activityEdit():
         self.new_window = QDialog()
-        uic.loadUi('ActivityEdit.ui', self.new_window)
+        uic.loadUi('ui_files/ActivityEdit.ui', self.new_window)
         self.new_window.show()
+
 #*    .time
     def curent_time(self):
-        self.current_time = time.localtime()
-        self.date_to_int()
-        
-    
+        self.current_time = datetime.now()
+
     def date_to_int(self):
-        current_date = f"{self.current_time.tm_year}{self.current_time.tm_mon:02d}{self.current_time.tm_mday:02d}"
-        print(f'pr: {self.previosly_date}')
-        print(f'cr: {self.curent_date}')
         
-        if self.curent_date > self.previosly_date:
-            #todo логика для сброс таймера за сегодня и тд
-            self.previosly_date = self.curent_date
+        self.current_date = int(self.current_time.strftime('%Y%m%d'))
+
+        
+        
+        if self.current_date > self.previosly_date:
+            # todo логика для сброс таймера за сегодня и тд
+            self.previosly_date = self.current_date
+            for number in range(2, 12):
+                button = f'time_button_{number}'
+                button = getattr(self, button, None)
+                button['today_time'] = 0
+                button['t_seconds'] = 0
+                print(button)
+                
+                print('_________')
+
             print(f'pr_2: {self.previosly_date}')
             print('yay')
-        else:
-            pass
 
-
-    def fake_date(self):
-        self.curent_date = self.curent_date + 1
-        print(f'fk: {self.curent_date}')
-        time.sleep(10)
-        
-
-
-
-
-
-
-
-
-
-
-
+       
 #*    Кнопка ігор додавання
     def open_addGameWidget(self):
         self.new_window = QDialog()
-        uic.loadUi('timedialog.ui', self.new_window)
+        uic.loadUi('ui_files/timedialog.ui', self.new_window)
         
         self.new_window.cancel_button.clicked.connect(self.add_game)
         self.new_window.save_button.clicked.connect(self.add_game)
@@ -403,7 +406,7 @@ class MainWindow(QMainWindow):
 
                 habit.show()
                 label.show()
-                print (time_button)
+                
                 habit.setText(time_button['name'])
                     
 #?    Ну собсно вибирання звички
@@ -498,10 +501,16 @@ class MainWindow(QMainWindow):
                 hours = time_button['seconds'] // 3600
                 minutes = (time_button['seconds'] % 3600) // 60
                 seconds = time_button['seconds'] % 60
-                
+
+                t_hours = time_button['t_seconds'] // 3600
+                t_minutes = (time_button['t_seconds'] % 3600) // 60
+                t_formatted_time = f' today time: {t_hours:02d}H:{t_minutes:02d}M'
                 formatted_time = f'  {hours:02d}:{minutes:02d}:{seconds:02d}'
                 self.timeLabel.setText(formatted_time)
                 
+                time_button['today_time'] = t_formatted_time
+                self.todayTime.setText(time_button['today_time'])
+
 ##!   Jsonn
     def save_data(self):
         data = {
@@ -515,7 +524,9 @@ class MainWindow(QMainWindow):
             'time_button_9': self.time_button_9,
             'time_button_10': self.time_button_10,
             'time_button_11': self.time_button_11,
-            'button_count': self.button_count
+            'button_count': self.button_count,
+            'previosly_date' : self.previosly_date
+
         }
         with open('timers_dataa.json', 'w') as file:
             json.dump(data, file, indent=4)
@@ -526,18 +537,31 @@ class MainWindow(QMainWindow):
         try:
             with open('timers_dataa.json', 'r') as file:
                 data = json.load(file)
-                self.time_button_2.update({'name': data.get('time_button_2', {}).get('name', self.time_button_2['name']), 'seconds': data.get('time_button_2', {}).get('seconds', 0), 'status': False})
-                self.time_button_3.update({'name': data.get('time_button_3', {}).get('name', self.time_button_3['name']), 'seconds': data.get('time_button_3', {}).get('seconds', 0), 'status': False})
-                self.time_button_4.update({'name': data.get('time_button_4', {}).get('name', self.time_button_4['name']), 'seconds': data.get('time_button_4', {}).get('seconds', 0), 'status': False})
-                self.time_button_5.update({'name': data.get('time_button_5', {}).get('name', self.time_button_5['name']), 'seconds': data.get('time_button_5', {}).get('seconds', 0), 'status': False})
-                self.time_button_6.update({'name': data.get('time_button_6', {}).get('name', self.time_button_6['name']), 'seconds': data.get('time_button_6', {}).get('seconds', 0), 'status': False})
-                self.time_button_7.update({'name': data.get('time_button_7', {}).get('name', self.time_button_7['name']), 'seconds': data.get('time_button_7', {}).get('seconds', 0), 'status': False})
-                self.time_button_8.update({'name': data.get('time_button_8', {}).get('name', self.time_button_8['name']), 'seconds': data.get('time_button_8', {}).get('seconds', 0), 'status': False})
-                self.time_button_9.update({'name': data.get('time_button_9', {}).get('name', self.time_button_9['name']), 'seconds': data.get('time_button_9', {}).get('seconds', 0), 'status': False})
-                self.time_button_10.update({'name': data.get('time_button_10', {}).get('name', self.time_button_10['name']), 'seconds': data.get('time_button_10', {}).get('seconds', 0), 'status': False})
-                self.time_button_11.update({'name': data.get('time_button_11', {}).get('name', self.time_button_11['name']), 'seconds': data.get('time_button_11', {}).get('seconds', 0), 'status': False})
-                self.button_count = data.get('button_count', 0)
+            for number in range(2, 12):
+                time_button_name = f'time_button_{number}'
+                time_button = getattr(self, time_button_name, {
+                    'name': '',
+                    'seconds': 0,
+                    'f_seconds': '',
+                    'status': False,
+                    'today_time': 0,
+                    't_seconds': 0})
+                button_data = data.get(time_button_name, {})
+                time_button.update({
+                    'name': button_data.get('name', time_button.get('name')),
+                    'seconds': button_data.get('seconds', 0),
+                    'f_seconds': button_data.get('f_seconds', time_button.get('f_seconds')),
+                    'today_time': button_data.get('today_time', time_button.get('today_time')),
+                    't_seconds': button_data.get('t_seconds', time_button.get('t_seconds')),
+                    'status': False,
+                    
+                })
+                setattr(self, time_button_name, time_button)
+            self.button_count = data.get('button_count', 0)
+            self.previosly_date = data.get('previosly_date', 0)
+            
             print('Data loaded successfully.')
+            
         except FileNotFoundError:
             print('No data file found.')
      
