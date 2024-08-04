@@ -1,0 +1,1 @@
+self.current_date = (f"{self.current_time.tm_year}{self.current_time.tm_mon:02d}{self.current_time.tm_mday:02d}")

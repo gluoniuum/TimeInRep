@@ -217,7 +217,7 @@ color: #c6d0f5;</string>
        <x>-2</x>
        <y>10</y>
        <width>211</width>
-       <height>521</height>
+       <height>553</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,5">
@@ -1088,6 +1088,42 @@ background-color: #232634;
        </layout>
       </item>
      </layout>
+    </widget>
+    <widget class="QLabel" name="todayTime">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>430</y>
+       <width>211</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #c6d0f5;
+font-size: 20px</string>
+     </property>
+     <property name="text">
+      <string>Today:</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="dev_butt">
+     <property name="geometry">
+      <rect>
+       <x>675</x>
+       <y>10</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #a5adce;
+font-family: Liberation Mono;
+background-color: #403549;
+border-radius: 15%;</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
     </widget>
    </widget>
    <widget class="QPushButton" name="pushButton">

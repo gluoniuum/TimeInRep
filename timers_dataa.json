@@ -1,63 +1,84 @@
 {
     "time_button_2": {
-        "status": true,
-        "seconds": 93186,
+        "status": false,
+        "seconds": 93269,
         "f_seconds": "25h",
-        "name": "code"
+        "name": "code",
+        "today_time": 0,
+        "t_seconds": 0
     },
     "time_button_3": {
         "name": "foggyTrail",
         "status": false,
-        "seconds": 18512,
-        "f_seconds": " 5h"
+        "seconds": 18555,
+        "f_seconds": " 5h",
+        "today_time": 0,
+        "t_seconds": 1
     },
     "time_button_4": {
         "name": "leetcode",
         "status": false,
-        "seconds": 17790,
-        "f_seconds": " 4h"
+        "seconds": 17833,
+        "f_seconds": " 4h",
+        "today_time": 0,
+        "t_seconds": 1
     },
     "time_button_5": {
         "name": "timeIn > 02.07",
-        "status": true,
-        "seconds": 5018,
-        "f_seconds": " 1h"
+        "status": false,
+        "seconds": 5422,
+        "f_seconds": " 1h",
+        "today_time": 0,
+        "t_seconds": 1
     },
     "time_button_6": {
-        "name": "",
-        "status": false,
-        "seconds": 0,
-        "f_seconds": "0.1m"
+        "name": "5",
+        "status": true,
+        "seconds": 9828,
+        "f_seconds": " 2h",
+        "today_time": " today time: 00H:00M",
+        "t_seconds": 3
     },
     "time_button_7": {
         "name": "",
         "status": false,
-        "seconds": 0,
-        "f_seconds": "0.1m"
+        "seconds": 14,
+        "f_seconds": "0.2m",
+        "today_time": 0,
+        "t_seconds": 1
     },
     "time_button_8": {
         "name": "",
         "status": false,
-        "seconds": 6,
-        "f_seconds": "0.1m"
+        "seconds": 49,
+        "f_seconds": "0.8m",
+        "today_time": 0,
+        "t_seconds": 1
     },
     "time_button_9": {
         "name": "",
         "status": false,
-        "seconds": 6,
-        "f_seconds": "0.1m"
+        "seconds": 49,
+        "f_seconds": "0.8m",
+        "today_time": 0,
+        "t_seconds": 1
     },
     "time_button_10": {
         "name": "2314",
         "status": false,
-        "seconds": 6,
-        "f_seconds": "0.1m"
+        "seconds": 49,
+        "f_seconds": "0.8m",
+        "today_time": 0,
+        "t_seconds": 1
     },
     "time_button_11": {
         "name": "1",
         "status": false,
-        "seconds": 6,
-        "f_seconds": "0.1m"
+        "seconds": 49,
+        "f_seconds": "0.8m",
+        "today_time": 0,
+        "t_seconds": 1
     },
-    "button_count": 5
+    "button_count": 6,
+    "previosly_date": 20240804
 }
