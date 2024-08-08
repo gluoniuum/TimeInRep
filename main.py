@@ -1,9 +1,9 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QDialog, QMessageBox, QMenu, QAction
 from PyQt5.QtCore import QTimer, Qt, QEvent
 from PyQt5 import uic
-
+from PyQt5.QtGui import QFont
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import sys
 
@@ -50,6 +50,7 @@ class MainWindow(QMainWindow):
         self.buttons = {}    
         self.timer = QTimer(self)
         self.auto_save = QTimer(self)
+        self.pomodoro_timer = QTimer(self)
         self.elapsed_time = 0
         self.start_butt.setCheckable(False)
         self.current_button = None
@@ -59,6 +60,10 @@ class MainWindow(QMainWindow):
         self.butt_num = self.habit_2
         self.current_time = datetime.now()
         self.previosly_date = 0
+        self.previosly_week = 0
+        self.pomo_butt.setText('🍅')
+        font = QFont('Segoe UI Emoji', 20)  
+        self.pomo_butt.setFont(font)
         # self.current_date = 20240803
         
 #?    Таймерасти
@@ -95,8 +100,10 @@ class MainWindow(QMainWindow):
         
         self.start_butt.clicked.connect(self.value_changer)
         self.time_butt_2.clicked.connect(self.open_addTimeWidget)
+        self.pomo_butt.clicked.connect(self.pomo_ui)
         self.timer.timeout.connect(self.zapuskator)
         self.timer.timeout.connect(self.timer_sync)
+        self.pomodoro_timer.timeout.connect(self.pomodoro)
         self.auto_save.timeout.connect(self.save_data)  
         self.auto_save.timeout.connect(self.curent_time) 
         self.dev_butt.clicked.connect(self.dev_button)
@@ -115,6 +122,7 @@ class MainWindow(QMainWindow):
        
         self.timer_sync()
         self.start_timer()
+        
 
 #?    Контекстне меню
         for number in range(2, 12):
@@ -164,6 +172,7 @@ class MainWindow(QMainWindow):
                 time_button = getattr(self, time_button, None)                
                 time_button['status'] = False
                 time_button['seconds'] = 0
+                time_button['t_seconds'] = 0
                 self.timer_sync()
     
     def edit_game(self):
@@ -184,6 +193,7 @@ class MainWindow(QMainWindow):
                     time_button = f'time_button_{number}'
                     time_button = getattr(self, time_button, None)
                     time_button['seconds'] = int(self.edit_window.lineEdit.text())
+                    time_button['t_seconds'] = int(self.edit_window.lineEdit.text())
                     self.new_window.hide()
                     self.timer_sync()
                     
@@ -204,7 +214,8 @@ class MainWindow(QMainWindow):
 
     def saver_timer(self):
         self.auto_save.start(10000)    
-
+    def pomo_timer(self):
+        self.pomodoro_timer.start(1000)  
     def startORstop(self):
         self.startButtonStatus = not self.startButtonStatus 
         if  self.startButtonStatus == True:
@@ -255,7 +266,7 @@ class MainWindow(QMainWindow):
         print('_______')
         print('yayy')
         print(self.time_button_6)
-    
+        print(self.current_time.strftime("%H:%M:%S"))
         print(f'pr: {self.previosly_date}')
         print(f'cr: {self.current_date}')
         print('_______')
@@ -271,24 +282,25 @@ class MainWindow(QMainWindow):
                 self.time_formattor(button_key)
                 self.date_to_int()
                 self.curent_time()
+                
     def time_formattor(self, button):
         seconds = button['seconds']
         if seconds <= 60:
             decimal_minutes = seconds / 60
-            small_formatted_time = f'{decimal_minutes:.1f}m'
+            small_formatted_time = f'{decimal_minutes:.1f}m  ' 
         elif seconds <= 360:
             minutes = seconds // 60
-            small_formatted_time = f'{minutes:2d}m'
+            small_formatted_time = f'{minutes:2d}m  '
         elif seconds <= 3600:
             decimal_hours = seconds / 3600
             
-            small_formatted_time = f'{decimal_hours:.1f}h'
+            small_formatted_time = f'{decimal_hours:.1f}h  '
             
 
         elif seconds >= 3600:
             hours = seconds // 3600
             
-            small_formatted_time = f'{hours:2d}h'
+            small_formatted_time = f'{hours:2d}h  '
         button['f_seconds'] = small_formatted_time
         self.small_timers()
 
@@ -314,18 +326,21 @@ class MainWindow(QMainWindow):
     def buttonsss(self):
         whois = self.sender()
        
-        if whois.text() == 'Save':
+        if whois.objectName() == 'save_button':
                
-            for number in range(2, 12):
+            for number in range(2, 12) :
                 if self.choose == f'habit_{number}':
                     time_button = f'time_button_{number}'
                     time_button = getattr(self, time_button, None)
                     time_button['seconds']  = time_button['seconds'] + int(self.new_window.lineEdit.text())
+                    time_button['t_seconds']  = time_button['t_seconds'] + int(self.new_window.lineEdit.text())
+
             self.new_window.hide()
             self.timer_sync()
             
-        elif whois.text() == 'Cancel':
+        elif whois.objectName()== 'cancel_button':
             self.new_window.hide()
+        
         else: 
             pass
 
@@ -334,18 +349,18 @@ class MainWindow(QMainWindow):
         uic.loadUi('ui_files/ActivityEdit.ui', self.new_window)
         self.new_window.show()
 
-#*    .time
+#*?   .time
     def curent_time(self):
-        self.current_time = datetime.now()
-
+        self.r_current_time = datetime.now()
+        self.current_time = self.r_current_time + timedelta()
+       
     def date_to_int(self):
         
         self.current_date = int(self.current_time.strftime('%Y%m%d'))
 
         
-        
         if self.current_date > self.previosly_date:
-            # todo логика для сброс таймера за сегодня и тд
+            
             self.previosly_date = self.current_date
             for number in range(2, 12):
                 button = f'time_button_{number}'
@@ -354,12 +369,15 @@ class MainWindow(QMainWindow):
                 button['t_seconds'] = 0
                 print(button)
                 
+            #     self.previosly_date = self.current_date
+            #     button['week_time'] = 0
+            #     button['w_seconds'] = 0
+            #     print(button)
                 print('_________')
 
             print(f'pr_2: {self.previosly_date}')
             print('yay')
 
-       
 #*    Кнопка ігор додавання
     def open_addGameWidget(self):
         self.new_window = QDialog()
@@ -371,6 +389,7 @@ class MainWindow(QMainWindow):
         self.new_window.show()
         self.crnt_butt_name = self.new_window.gameName.text()
         return self.crnt_butt_name
+
     def add_game(self):     
         game_name = self.new_window.gameName.text()
         for number in range(2, 12):
@@ -435,9 +454,7 @@ class MainWindow(QMainWindow):
                     self.startButtonStatus = True
                     self.startORstop()
         print('_____________')
-        
-                
-                
+                  
     def choose_indicator(self, choice, number):
         if hasattr(self, 'previous_choice') and self.previous_choice:
             self.previous_choice.setStyleSheet('''background-color: #232634; 
@@ -504,14 +521,97 @@ class MainWindow(QMainWindow):
 
                 t_hours = time_button['t_seconds'] // 3600
                 t_minutes = (time_button['t_seconds'] % 3600) // 60
-                t_formatted_time = f' today time: {t_hours:02d}H:{t_minutes:02d}M'
+                t_seconds = time_button['t_seconds'] % 60
+                t_formatted_time = f' today: {t_hours:02d}:{t_minutes:02d}:{t_seconds:02d}'
                 formatted_time = f'  {hours:02d}:{minutes:02d}:{seconds:02d}'
                 self.timeLabel.setText(formatted_time)
                 
                 time_button['today_time'] = t_formatted_time
                 self.todayTime.setText(time_button['today_time'])
 
-##!   Jsonn
+##! pomodoro
+    def pomo_ui(self):
+        self.new_window = QDialog()
+        uic.loadUi('ui_files/pomo.ui', self.new_window)
+        self.new_window.show()
+        self.new_window.buttCancel.clicked.connect(self.pomo_start)
+        self.new_window.buttStart.clicked.connect(self.pomo_start)
+    def pomo_start(self):
+        whois = self.sender()
+        print(self.sender)
+        if whois.objectName() == 'buttCancel':
+            self.new_window.hide()
+        if whois.objectName() == 'buttStart':
+            self.intial_longBreakPomo = int(self.new_window.longBreak_lineEdit.text())
+            self.intial_workPomo = int(self.new_window.work_lineEdit.text())
+            
+            self.intial_breakPomo = int(self.new_window.break_lineEdit.text())
+            
+            self.intial_pomoCycles = int(self.new_window.pomoCycles_lineEdit.text())
+
+            self.pomo_status = 'work'
+            self.pomod_status()
+            self.pomo_timer()
+            self.new_window.hide()
+
+
+
+    def pomod_status(self):
+        
+        self.workPomo = self.intial_workPomo 
+        self.breakPomo = self.intial_breakPomo 
+        self.longBreakPomo = self.intial_longBreakPomo
+        self.pomoCycles = self.intial_pomoCycles
+        self.cycles = self.pomoCycles
+        self.pomoCount = 0
+        self.cycleLabel.setText(str(self.cycles))
+        
+
+    
+    def pomodoro(self):
+    
+        if self.pomo_status == 'work' and self.workPomo > 1:
+            self.workPomo -= 1
+            self.pomoLabel.setText(str(self.workPomo))
+            self.pomoLabel.setStyleSheet('color: rgb(255, 99, 99); font-size: 20px;')  
+
+            if self.workPomo <= 1:
+                self.pomo_status = 'break'
+                self.breakPomo = self.intial_breakPomo
+                self.cycles -=1
+                self.cycleLabel.setText(str(self.cycles))
+                #alarm of message
+
+            if self.cycles <= 0:
+                self.pomo_status = 'longBreak'
+                self.longBreakPomo = self.intial_longBreakPomo
+                
+        if self.pomo_status == 'longBreak' and self.longBreakPomo > 1:
+            self.longBreakPomo -= 1
+            self.cycles = self.pomoCycles
+             
+            self.pomoLabel.setText(str(self.longBreakPomo))
+            self.pomoLabel.setStyleSheet('color: rgb(23, 194, 80); font-size: 20px;')  
+
+            if self.longBreakPomo <= 1:
+                self.pomo_status = 'work'
+                self.workPomo = self.intial_workPomo
+                print('yay')
+
+        if self.pomo_status == 'break'and self.breakPomo > 1:
+            self.breakPomo -= 1
+            self.pomoLabel.setText(str(self.breakPomo))
+            self.pomoLabel.setStyleSheet('color: rgb(23, 194, 71); font-size: 20px;')  
+            if self.breakPomo <= 1:
+                self.pomo_status = 'work'
+                self.workPomo = self.intial_workPomo
+                
+                print('yay')
+                self.pomoCount += 1
+                
+                #alarm and msg
+        
+##! Jsonn
     def save_data(self):
         data = {
             'time_button_2': self.time_button_2,
@@ -564,8 +664,7 @@ class MainWindow(QMainWindow):
             
         except FileNotFoundError:
             print('No data file found.')
-     
-#########################################################################################* 
+##!     
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main_window = MainWindow()
