@@ -1,10 +1,10 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QDialog, QMessageBox, QMenu, QAction
-from PyQt5.QtCore import QTimer, Qt, QEvent
+from PyQt5.QtCore import QTimer, Qt, QEvent, QUrl
 from PyQt5 import uic
 from PyQt5.QtGui import QFont
 import json
 from datetime import datetime, timedelta
-
+from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 import sys
 
 
@@ -64,6 +64,11 @@ class MainWindow(QMainWindow):
         self.pomo_butt.setText('🍅')
         font = QFont('Segoe UI Emoji', 20)  
         self.pomo_butt.setFont(font)
+        self.player = QMediaPlayer()
+        url = QUrl.fromLocalFile('/home/gluon/projects/TimeInRep/pomo.wav')
+        self.player.setMedia(QMediaContent(url))
+        self.player.play()
+        
         # self.current_date = 20240803
         
 #?    Таймерасти
@@ -123,7 +128,6 @@ class MainWindow(QMainWindow):
         self.timer_sync()
         self.start_timer()
         
-
 #?    Контекстне меню
         for number in range(2, 12):
             habit_key = f'habit_{number}'
@@ -457,32 +461,34 @@ class MainWindow(QMainWindow):
                   
     def choose_indicator(self, choice, number):
         if hasattr(self, 'previous_choice') and self.previous_choice:
-            self.previous_choice.setStyleSheet('''background-color: #232634; 
+            self.previous_choice.setStyleSheet('''background-color: #1E1F24; 
             color: #a5adce;
             font-family: Liberation Mono;
-            background-color: #232634;
+            
+            background-color: #1E1F24;;
             border-radius: 0%; ''')  
         
         if hasattr(self, 'previous_statusOn') and self.previous_statusOn:
-            self.previous_statusOn.setStyleSheet('''background-color: #232634; 
+            self.previous_statusOn.setStyleSheet('''background-color: #1E1F24; 
             color: #a5adce;
             
-            background-color: #232634;
+            background-color: #1E1F24;;
             border-top-left-radius: 5%;
+            font-size:14px;
             border-bottom-left-radius: 5%; ''')  
 
         if hasattr(self, 'previous_label') and self.previous_label:
-            self.previous_label.setStyleSheet('''background-color: #232634; 
+            self.previous_label.setStyleSheet('''background-color: #1E1F24; 
             color: #a5adce;
             font-family: Liberation Mono;
-            background-color: #232634;
+            background-color: #1E1F24;;
             border-top-right-radius: 5%;
             border-bottom-right-radius: 5%;''')  
         
-        choice.setStyleSheet('''background-color: #232634; 
+        choice.setStyleSheet('''background-color: #1E1F24;
             color: #a5adce;
             font-family: Liberation Mono;
-            background-color: #181926;
+            background-color: #1E1F29;
             border-radius: 0%; ''')  
         statusOnTxt = f'statusOn_{number - 1}'
         
@@ -493,18 +499,19 @@ class MainWindow(QMainWindow):
         timeLabel = f'timeLabel_{number}'
         timeLabel = getattr(self, timeLabel)
 
-        timeLabel.setStyleSheet('''background-color: #232634; 
+        timeLabel.setStyleSheet('''background-color: #1E1F29;
             color: #a5adce;
             font-family: Liberation Mono;
-            background-color: #181926;
+            background-color:#1E1F29 ;
             border-top-right-radius: 5%;
             border-bottom-right-radius: 5%; ''')  
 
-        statusOn.setStyleSheet('''background-color: #232634; 
+        statusOn.setStyleSheet('''background-color: #1E1F29;
             color: #a5adce;
             font-family: Liberation Mono;
-            background-color: #181926;
+            background-color: #1E1F29;
             border-top-left-radius: 5%;
+            font-size:15px;
             border-bottom-left-radius: 5%; ''')  
         self.previous_label = timeLabel
         self.previous_choice = choice  
@@ -536,6 +543,7 @@ class MainWindow(QMainWindow):
         self.new_window.show()
         self.new_window.buttCancel.clicked.connect(self.pomo_start)
         self.new_window.buttStart.clicked.connect(self.pomo_start)
+
     def pomo_start(self):
         whois = self.sender()
         print(self.sender)
@@ -554,8 +562,6 @@ class MainWindow(QMainWindow):
             self.pomo_timer()
             self.new_window.hide()
 
-
-
     def pomod_status(self):
         
         self.workPomo = self.intial_workPomo 
@@ -566,8 +572,6 @@ class MainWindow(QMainWindow):
         self.pomoCount = 0
         self.cycleLabel.setText(str(self.cycles))
         
-
-    
     def pomodoro(self):
     
         if self.pomo_status == 'work' and self.workPomo > 1:
@@ -580,6 +584,9 @@ class MainWindow(QMainWindow):
                 self.breakPomo = self.intial_breakPomo
                 self.cycles -=1
                 self.cycleLabel.setText(str(self.cycles))
+
+                
+               
                 #alarm of message
 
             if self.cycles <= 0:
