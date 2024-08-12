@@ -20,7 +20,8 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(48, 52, 70);</string>
+   <string notr="true">background-color:#121319;
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -51,7 +52,8 @@
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #303446;</string>
+     <string notr="true">background-color:#121319;
+</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::NoFrame</enum>
@@ -158,7 +160,7 @@ font-size: 40px</string>
         </property>
         <property name="styleSheet">
          <string notr="true">border-radius: 10% ;
-background-color: #232634;
+background-color: #1E1F24;
 color: #c6d0f5;</string>
         </property>
         <property name="text">
@@ -194,8 +196,9 @@ color: #c6d0f5;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">border-radius: 10% ;
-background-color: #232634;
-color: #c6d0f5;</string>
+
+color: #c6d0f5;
+background-color: #1E1F24;</string>
         </property>
         <property name="text">
          <string>🍅</string>
@@ -221,7 +224,7 @@ color: #c6d0f5;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">border-radius: 10% ;
-background-color: #232634;
+background-color: #1E1F24;
 color: #c6d0f5;</string>
         </property>
         <property name="text">
@@ -255,7 +258,7 @@ color: #c6d0f5;</string>
       <rect>
        <x>0</x>
        <y>10</y>
-       <width>213</width>
+       <width>255</width>
        <height>553</height>
       </rect>
      </property>
@@ -281,15 +284,16 @@ color: #c6d0f5;</string>
           </property>
           <property name="minimumSize">
            <size>
-            <width>0</width>
-            <height>31</height>
+            <width>63</width>
+            <height>36</height>
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: #232634; 
-color: #a5adce;
-font-family: Liberation Mono;
-background-color: #232634;
+           <string notr="true">color: #a5adce;
+font-size:45px;
+background-color: #1E1F24;
+border-top-left-radius: 5%;
+border-bottom-left-radius: 5%;
 border-top-right-radius: 5%;
 border-bottom-right-radius: 5%;</string>
           </property>
@@ -315,7 +319,7 @@ border-bottom-right-radius: 5%;</string>
           <property name="styleSheet">
            <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 border-radius: 0%;</string>
           </property>
           <property name="text">
@@ -343,7 +347,7 @@ border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 </string>
           </property>
           <property name="text">
@@ -374,8 +378,8 @@ background-color: #232634;
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;
-font-size: 10px;
+background-color: #1E1F24;
+font-size: 15px;
 border-top-left-radius: 5%;
 border-bottom-left-radius: 5%;</string>
           </property>
@@ -401,7 +405,7 @@ border-bottom-left-radius: 5%;</string>
           <property name="styleSheet">
            <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 border-radius: 0%;</string>
           </property>
           <property name="text">
@@ -429,7 +433,7 @@ border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 </string>
           </property>
           <property name="text">
@@ -460,7 +464,7 @@ background-color: #232634;
           </property>
           <property name="styleSheet">
            <string notr="true">color: #ea999c;
-background-color: #232634;
+background-color: #1E1F24;
 font-size: 10px;
 border-top-left-radius: 5%;
 border-bottom-left-radius: 5%;</string>
@@ -487,7 +491,7 @@ border-bottom-left-radius: 5%;</string>
           <property name="styleSheet">
            <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 border-radius: 0%;</string>
           </property>
           <property name="text">
@@ -514,7 +518,7 @@ border-radius: 0%;</string>
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 border-top-right-radius: 5%;
 border-bottom-right-radius: 5%;</string>
           </property>
@@ -549,7 +553,8 @@ border-bottom-right-radius: 5%;</string>
 background-color: #232634;
 font-size: 10px;
 border-top-left-radius: 5%;
-border-bottom-left-radius: 5%;</string>
+border-bottom-left-radius: 5%;
+background-color: #1E1F24;</string>
           </property>
           <property name="text">
            <string> ⬤</string>
@@ -573,7 +578,7 @@ border-bottom-left-radius: 5%;</string>
           <property name="styleSheet">
            <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 border-radius: 0%;</string>
           </property>
           <property name="text">
@@ -601,7 +606,7 @@ border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 </string>
           </property>
           <property name="text">
@@ -635,7 +640,8 @@ background-color: #232634;
 background-color: #232634;
 font-size: 10px;
 border-top-left-radius: 5%;
-border-bottom-left-radius: 5%;</string>
+border-bottom-left-radius: 5%;
+background-color: #1E1F24;</string>
           </property>
           <property name="text">
            <string> ⬤</string>
@@ -659,7 +665,7 @@ border-bottom-left-radius: 5%;</string>
           <property name="styleSheet">
            <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 border-radius: 0%;</string>
           </property>
           <property name="text">
@@ -687,7 +693,7 @@ border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 </string>
           </property>
           <property name="text">
@@ -721,7 +727,8 @@ background-color: #232634;
 background-color: #232634;
 font-size: 10px;
 border-top-left-radius: 15%;
-border-bottom-left-radius: 15%;</string>
+border-bottom-left-radius: 15%;
+background-color: #1E1F24;</string>
           </property>
           <property name="text">
            <string> ⬤</string>
@@ -745,7 +752,7 @@ border-bottom-left-radius: 15%;</string>
           <property name="styleSheet">
            <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 border-radius: 0%;</string>
           </property>
           <property name="text">
@@ -773,7 +780,7 @@ border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 </string>
           </property>
           <property name="text">
@@ -807,7 +814,8 @@ background-color: #232634;
 background-color: #232634;
 font-size: 10px;
 border-top-left-radius: 5%;
-border-bottom-left-radius: 5%;</string>
+border-bottom-left-radius: 5%;
+background-color: #1E1F24;</string>
           </property>
           <property name="text">
            <string> ⬤</string>
@@ -831,7 +839,7 @@ border-bottom-left-radius: 5%;</string>
           <property name="styleSheet">
            <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 border-radius: 0%;</string>
           </property>
           <property name="text">
@@ -859,7 +867,7 @@ border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 </string>
           </property>
           <property name="text">
@@ -893,7 +901,8 @@ background-color: #232634;
 background-color: #232634;
 font-size: 10px;
 border-top-left-radius: 5%;
-border-bottom-left-radius: 5%;</string>
+border-bottom-left-radius: 5%;
+background-color: #1E1F24;</string>
           </property>
           <property name="text">
            <string> ⬤</string>
@@ -917,7 +926,7 @@ border-bottom-left-radius: 5%;</string>
           <property name="styleSheet">
            <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 border-radius: 0%;</string>
           </property>
           <property name="text">
@@ -945,7 +954,7 @@ border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 </string>
           </property>
           <property name="text">
@@ -979,7 +988,8 @@ background-color: #232634;
 background-color: #232634;
 font-size: 10px;
 border-top-left-radius: 5%;
-border-bottom-left-radius: 5%;</string>
+border-bottom-left-radius: 5%;
+background-color: #1E1F24;</string>
           </property>
           <property name="text">
            <string> ⬤</string>
@@ -1003,7 +1013,7 @@ border-bottom-left-radius: 5%;</string>
           <property name="styleSheet">
            <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 border-radius: 0%;</string>
           </property>
           <property name="text">
@@ -1031,7 +1041,7 @@ border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 </string>
           </property>
           <property name="text">
@@ -1065,7 +1075,8 @@ background-color: #232634;
 background-color: #232634;
 font-size: 10px;
 border-top-left-radius: 5%;
-border-bottom-left-radius: 5%;</string>
+border-bottom-left-radius: 5%;
+background-color: #1E1F24;</string>
           </property>
           <property name="text">
            <string> ⬤</string>
@@ -1089,7 +1100,7 @@ border-bottom-left-radius: 5%;</string>
           <property name="styleSheet">
            <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 border-radius: 0%;</string>
           </property>
           <property name="text">
@@ -1117,7 +1128,7 @@ border-bottom-right-radius: 5%;
 font-size: 15px;
 color: #a5adce;
 font-family: Liberation Mono;
-background-color: #232634;
+background-color: #1E1F24;
 </string>
           </property>
           <property name="text">
@@ -1237,6 +1248,19 @@ font-size: 20px
       <string>0</string>
      </property>
     </widget>
+    <widget class="Line" name="line">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>530</y>
+       <width>221</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
@@ -1250,7 +1274,7 @@ font-size: 20px
     <property name="styleSheet">
      <string notr="true">color: #a5adce;
 font-family: Liberation Mono;
-background-color: #1e1e2e;
+background-color: #1E1F24;
 border-radius: 5%;</string>
     </property>
     <property name="text">

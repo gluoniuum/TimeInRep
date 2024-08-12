@@ -1,84 +1,84 @@
 {
     "time_button_2": {
         "status": true,
-        "seconds": 140609,
-        "f_seconds": "39h  ",
+        "seconds": 154003,
+        "f_seconds": "42h  ",
         "name": "code",
-        "today_time": " today: 01:32:15",
-        "t_seconds": 5535
+        "today_time": " today: 00:42:36",
+        "t_seconds": 2556
     },
     "time_button_3": {
         "name": "foggyTrail",
         "status": false,
-        "seconds": 18595,
+        "seconds": 18671,
         "f_seconds": " 5h  ",
         "today_time": 0,
-        "t_seconds": 0
+        "t_seconds": 1
     },
     "time_button_4": {
         "name": "leetcode",
         "status": false,
-        "seconds": 17871,
+        "seconds": 17893,
         "f_seconds": " 4h  ",
         "today_time": 0,
-        "t_seconds": 0
+        "t_seconds": 1
     },
     "time_button_5": {
         "name": "timeIn > 02.07",
-        "status": true,
-        "seconds": 42200,
+        "status": false,
+        "seconds": 42386,
         "f_seconds": "11h  ",
-        "today_time": " today: 01:11:17",
-        "t_seconds": 5535
+        "today_time": 0,
+        "t_seconds": 1
     },
     "time_button_6": {
         "name": "flute",
         "status": false,
-        "seconds": 10303,
+        "seconds": 10334,
         "f_seconds": " 2h  ",
         "today_time": 0,
-        "t_seconds": 0
+        "t_seconds": 1
     },
     "time_button_7": {
         "name": "aiogram",
         "status": false,
-        "seconds": 9871,
-        "f_seconds": " 2h  ",
+        "seconds": 14390,
+        "f_seconds": " 3h  ",
         "today_time": 0,
-        "t_seconds": 0
+        "t_seconds": 1
     },
     "time_button_8": {
-        "name": "1",
-        "status": false,
-        "seconds": 6,
-        "f_seconds": "0.1m  ",
-        "today_time": 0,
-        "t_seconds": 0
+        "name": "schedule_bot",
+        "status": true,
+        "seconds": 3718,
+        "f_seconds": " 1h  ",
+        "today_time": " today: 00:00:01",
+        "t_seconds": 2559
     },
     "time_button_9": {
         "name": "",
         "status": false,
-        "seconds": 6,
-        "f_seconds": "0.1m  ",
+        "seconds": 28,
+        "f_seconds": "0.5m  ",
         "today_time": 0,
-        "t_seconds": 0
+        "t_seconds": 1
     },
     "time_button_10": {
         "name": "schedule_bot",
         "status": false,
-        "seconds": 6372,
+        "seconds": 6394,
         "f_seconds": " 1h  ",
         "today_time": 0,
-        "t_seconds": 0
+        "t_seconds": 1
     },
     "time_button_11": {
         "name": "5",
         "status": false,
-        "seconds": 33,
-        "f_seconds": "0.6m  ",
+        "seconds": 55,
+        "f_seconds": "0.9m  ",
         "today_time": 0,
-        "t_seconds": 0
+        "t_seconds": 1
     },
-    "button_count": 7,
-    "previosly_date": 20240809
+    "button_count": 8,
+    "previosly_date": 20240812
 }
