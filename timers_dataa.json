@@ -1,11 +1,11 @@
 {
     "time_button_2": {
         "status": true,
-        "seconds": 175557,
-        "f_seconds": "48h  ",
+        "seconds": 188687,
+        "f_seconds": "52h  ",
         "name": "code",
-        "today_time": " today: 00:00:00",
-        "t_seconds": 150
+        "today_time": 0,
+        "t_seconds": 2254
     },
     "time_button_3": {
         "name": "foggyTrail",
@@ -13,7 +13,7 @@
         "seconds": 18675,
         "f_seconds": " 5h  ",
         "today_time": 0,
-        "t_seconds": 1
+        "t_seconds": 0
     },
     "time_button_4": {
         "name": "leetcode",
@@ -21,7 +21,7 @@
         "seconds": 17897,
         "f_seconds": " 4h  ",
         "today_time": 0,
-        "t_seconds": 1
+        "t_seconds": 0
     },
     "time_button_5": {
         "name": "timeIn > 02.07",
@@ -29,7 +29,7 @@
         "seconds": 42390,
         "f_seconds": "11h  ",
         "today_time": 0,
-        "t_seconds": 1
+        "t_seconds": 0
     },
     "time_button_6": {
         "name": "flute",
@@ -37,7 +37,7 @@
         "seconds": 10338,
         "f_seconds": " 2h  ",
         "today_time": 0,
-        "t_seconds": 1
+        "t_seconds": 0
     },
     "time_button_7": {
         "name": "aiogram",
@@ -45,23 +45,23 @@
         "seconds": 14394,
         "f_seconds": " 3h  ",
         "today_time": 0,
-        "t_seconds": 1
+        "t_seconds": 0
     },
     "time_button_8": {
         "name": "schedule_bot",
         "status": false,
         "seconds": 27677,
         "f_seconds": " 6h  ",
-        "today_time": " today: 00:41:41",
-        "t_seconds": 2501
+        "today_time": 0,
+        "t_seconds": 0
     },
     "time_button_9": {
         "name": "back support bot",
         "status": true,
-        "seconds": 185,
-        "f_seconds": " 3m  ",
-        "today_time": " today: 00:02:34",
-        "t_seconds": 154
+        "seconds": 13315,
+        "f_seconds": " 3h  ",
+        "today_time": " today: 00:37:34",
+        "t_seconds": 2254
     },
     "time_button_10": {
         "name": "schedule_bot",
@@ -69,7 +69,7 @@
         "seconds": 6398,
         "f_seconds": " 1h  ",
         "today_time": 0,
-        "t_seconds": 1
+        "t_seconds": 0
     },
     "time_button_11": {
         "name": "5",
@@ -77,8 +77,8 @@
         "seconds": 59,
         "f_seconds": "1.0m  ",
         "today_time": 0,
-        "t_seconds": 1
+        "t_seconds": 0
     },
     "button_count": 9,
-    "previosly_date": 20240818
+    "previosly_date": 20240819
 }
