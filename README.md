@@ -17,5 +17,5 @@ this app, based on pyqt5 - activity tracker, we have many apps where we can rise
 
 That's all! 🎉 (i really used this for maybe 60hours, you can saw in timerss_data.json)
 
-
+![Screenshot of TimeIn](photo_2024-09-30_19-36-26.jpg)
 
